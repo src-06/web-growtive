@@ -14,8 +14,10 @@
 
   <div
     id="nav-sticky"
-    class="z-50 fixed top-0 w-full h-fit bg-white transition-transform"
-  ><x-navigation/></div>
+    class="z-50 fixed top-0 w-full h-fit transition-transform"
+  >
+    <x-navigation-sticky />
+  </div>
 
   <main>
     @yield('content')

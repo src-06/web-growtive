@@ -7,7 +7,7 @@
     id="Hero"
   >
     <img
-      src="{{ Vite::asset('resources/img/bg-header.jpg') }}"
+      src="{{ Vite::asset('resources/img/bg-header.webp') }}"
       alt="Background Header"
       class="w-full"
     >
