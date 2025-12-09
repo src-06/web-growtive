@@ -15,7 +15,7 @@
 
   <section
     id="About"
-    class="w-[90%] mx-auto mt-40"
+    class="w-[90%] mx-auto pt-40"
   >
     <div
       class="flex gap-33"
@@ -23,7 +23,7 @@
       <img
         src="https://indie.co.id/growtive/wp-content/uploads/2024/01/about1h1.jpg"
         alt="Image About"
-        class="w-120 rounded-xl"
+        class="w-120 shadow-lg hover:shadow-2xl rounded-xl transition-shadow duration-300"
       >
       <div
         class="flex flex-col gap-6"
@@ -39,12 +39,18 @@
         <p
           class="text-black/60"
         >Kami akan mengiklankan produk anda dengan maksimal agar produk anda menjadi lebih terkenal.</p>
+        <p
+          class="text-black/60"
+        >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam atque, perferendis quasi maiores nesciunt cum? Omnis, optio iste quod sit facilis iusto necessitatibus aut tempore voluptas quae qui et quaerat eaque dolor accusantium, inventore ullam aliquid.</p>
+        <p
+          class="text-black/60"
+        >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque beatae in asperiores commodi. Sapiente, facilis corrupti. Cupiditate quisquam ad debitis sapiente eius illo laborum?</p>
         <ul
-          class="flex flex-col gap-4 text-lg font-bold"
+          class="flex flex-col gap-4 text-lg font-bold [&>li]:flex [&>li]:items-center [&>li]:gap-2"
         >
-          <li>Mengiklankan produk anda.</li>
-          <li>Iklankan di media sosial</li>
-          <li>Mengelola akun media sosial</li>
+          <li><x-lucide-badge-check class="size-6 text-green-700" /> Mengiklankan produk anda.</li>
+          <li><x-lucide-badge-check class="size-6 text-green-700" /> Iklankan di media sosial</li>
+          <li><x-lucide-badge-check class="size-6 text-green-700" /> Mengelola akun media sosial</li>
         </ul>
       </div>
     </div>
@@ -52,7 +58,7 @@
 
   <section
     id="Services"
-    class="w-[90%] mx-auto mt-20"
+    class="w-[90%] mx-auto mb-40 pt-30"
   >
     <div
       class="grid grid-cols-4 gap-8"
@@ -88,7 +94,7 @@
 
   <section
     id="Testimonial"
-    class="w-full mt-40 py-20 bg-stone-900 text-white"
+    class="w-full py-30 bg-stone-900 text-white"
   >
     <div
       class="w-[90%] mx-auto grid grid-cols-3"
@@ -139,7 +145,7 @@
 
   <section
     id="Contact"
-    class="w-full mt-20 flex justify-between gap-10"
+    class="w-full pt-30 flex justify-between gap-10"
   >
     <div
       class="w-[40%] ml-20"

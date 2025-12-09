@@ -1,5 +1,5 @@
-<header
-  class="w-full h-15 mx-auto px-10 flex justify-between items-center bg-blue-900/50 backdrop-invert-25 backdrop-blur-md text-stone-900 shadow-md"
+<headerd
+  class="w-full h-15 mx-auto px-10 flex justify-between items-center bg-white/80 backdrop-invert-25 backdrop-blur-md text-stone-900 shadow-md shadow-blue-900/25"
 >
   <img
     src="{{ Vite::asset('resources/img/logo-black.webp') }}"
@@ -10,4 +10,4 @@
   <x-list.nav
     class="flex gap-12"
   />
-</header>
+</headerd>
