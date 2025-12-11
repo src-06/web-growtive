@@ -4,34 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  @vite(['resources/js/app.js', 'resources/css/app.css'])
-  <title>@yield('title') - Growdience Creative</title>
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <title>Growdience Creative | Website Periklanan</title>
 </head>
 <body
-  class="relative w-full h-full overflow-x-hidden"
+  class="w-full h-full overflow-x-hidden"
 >
-  <x-navigation />
-
   <div
-    id="nav-sticky"
-    class="z-50 fixed top-0 w-full h-fit transition-transform duration-300"
+    class="-z-1 relative bg-white"
   >
-    <x-navigation-sticky />
+    <div class="absolute top-30 -left-12 size-55 bg-linear-to-t from-blue-900/80 to-indigo-400/80 rounded-full"></div>
+    <div class="absolute top-65 -left-12 size-45 bg-linear-to-t from-blue-900/80 to-indigo-400/80 rounded-full"></div>
+    <div class="absolute top-90 -right-12 size-55 bg-linear-to-t from-blue-900/80 to-indigo-400/80 rounded-full"></div>
+    <div class="absolute top-125 -right-12 size-60 bg-linear-to-t from-blue-900/80 to-indigo-400/80 rounded-full"></div>
+    <img
+      src="{{ Vite::asset('resources/img/bg-header.jpg') }}"
+      alt="bg-header"
+      class="-z-50 absolute top-0 opacity-15"
+    >
   </div>
+
+  @include('partials.navbar')
 
   <main>
     @yield('content')
   </main>
 
-  <div
-    id="to-top"
-    class="fixed bottom-10 right-6 size-14 flex justify-center items-center text-white bg-blue-600 hover:bg-blue-800 rounded-full transition-all duration-400 cursor-pointer hover:[&>div]:-translate-y-2"
-  >
-    <div
-      class="transition-transform duration-500"
-    ><x-lucide-arrow-up-from-dot class="size-7" /></div>
-  </div>
-
-  <x-footer />
-</body
+  @include('partials.footer')
+</body>
 </html>
