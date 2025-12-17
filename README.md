@@ -3,36 +3,47 @@ Website periklanan digital untuk tugas project kuliah.
 
 ### Hal-hal yang dipersiapkan sebelum setup project ini
 **Note**: _Instalasi hanya untuk arch linux based_
-1. Install Node.js dan NPM
+1. Install git
+	```bash
+	sudo pacman -S git
+	```
+
+2. Install Node.js dan NPM
 	```bash
 	sudo pacman -S nodejs npm
 	```
 
-2. Install composer
+3. Install composer
 	```bash
 	sudo pacman -S composer
 	```
-3. Install PHP v8.2+
+4. Install PHP v8.2+
 	```bash
 	sudo pacman -S php
 	```
 
 ### Langkah-langkah setup
-1. Copy/cut/rename file '.env.local' jadi '.env'
-2. Install package dependencies
+1. Clone repository dan masuk ke folder web-growtive
+	```bash
+	git clone https://github.com/src-06/web-growtive.git
+	cd web-growtive
+	```
+
+2. Copy/cut/rename file '.env.local' jadi '.env'
+3. Install package dependencies
 
 	```bash
 	npm install
 	composer install
 	```
 
-3. Migrasi database
+4. Migrasi database
 
 	```bash
 	php artisan migrate
 	```
 
-4. Tinggal running di local
+5. Tinggal running di local
 
 	```bash
 	npm run dev
