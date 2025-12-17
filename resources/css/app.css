@@ -5,11 +5,31 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/public/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
 @theme {
-  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans: 'Montserrat', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --color-bg: #212121;
+  --color-fg: #dadada;
 }
 
 html,
 body {
-  scroll-behavior: smooth;
+  @apply relative min-w-full min-h-full text-fg border-fg outline-fg scroll-smooth select-none;
+}
+
+a {
+  @apply transition-all duration-300;
+}
+
+a:hover {
+  @apply text-fg/80;
+}
+
+button {
+  @apply cursor-pointer;
 }

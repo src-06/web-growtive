@@ -1,188 +1,159 @@
-<?php
-/**
- * https://www.figma.com/design/5FjjO7eUN7vXMMWB4NJX6m/AlipProject?node-id=13-3117&t=8pbnyLA98rwsUcXr-1
- */
-?>
-
 @extends('layouts.app')
+@section('page', 'Beranda')
 
 @section('content')
   <section
-    id="HeroSections"
+    id="HeroSection"
+    class="w-[90%] h-dvh mx-auto pt-40 pb-30 flex justify-center items-center gap-12"
   >
-    <div
-      class="w-[65%] mx-auto flex items-center"
+    <img
+      src="/assets/images/bg/header.svg"
+      alt="bg-header"
+      class="-z-50 absolute -top-0.5 left-0 w-full"
     >
-      <div
-        class="w-102 py-45 flex flex-col gap-9 text-4xl text-blue-400"
-      >
-        <h1
-          class="font-black uppercase"
-        >periklanan melalui <span class="text-blue-600">digital</span></h1>
-        <h1
-          class="italic uppercase"
-        >Pengelolaaan Akun Media <span class="text-blue-600">Social</span></h1>
-        <div
-          class="flex items-center"
-        >
-          <button
-            class="px-4 h-11 text-lg text-white bg-blue-950 rounded-full cursor-pointer"
-          >About Us</button>
-          <x-lucide-chevron-right class="size-15 text-blue-950" />
-        </div>
-      </div>
-      <div
-        class="mt-10"
-      >
-        <img
-          src="{{ Vite::asset('resources/img/frame-ig.svg') }}"
-          alt="ig"
-          class="w-50 drop-shadow-md drop-shadow-black rotate-12"
-        >
-        <img
-          src="{{ Vite::asset('resources/img/frame-tt.svg') }}"
-          alt="tt"
-          class="w-50 translate-x-15 -translate-y-25"
-        >
-        <img
-          src="{{ Vite::asset('resources/img/frame-fb.svg') }}"
-          alt="fb"
-          class="w-50 drop-shadow-md drop-shadow-black -translate-x-6 -translate-y-49 -rotate-25"
-        >
-      </div>
-    </div>
-  </section>
-
-  <section
-    id="ServiceSections"
-    class="py-13 flex flex-col items-center bg-white border-t-2 border-blue-600"
-  >
-    <h1
-      class="text-6xl text-blue-950 font-bold"
-    >Apa Yang Saya Tawarkan</h1>
     <div
-      class="py-15 flex gap-4"
-    >
-      <img
-        src="{{ Vite::asset('resources/img/card-ig.svg') }}"
-        alt="tt"
-        class="w-80 rotate-15"
-      >
-      <img
-        src="{{ Vite::asset('resources/img/card-tt.svg') }}"
-        alt="tt"
-        class="w-80 translate-y-13"
-      >
-      <img
-        src="{{ Vite::asset('resources/img/card-fb.svg') }}"
-        alt="tt"
-        class="w-80 -rotate-15"
-      >
-    </div>
-  </section>
-
-  <section
-    id="AboutSections"
-    class="py-20 flex flex-col items-center bg-white"
-  >
-    <div
-      class="text-blue-950 text-center"
+      class="w-180 h-100 flex flex-col justify-around text-6xl uppercase"
     >
       <h1
-        class="text-6xl font-bold"
-      >Tentang Kami</h1>
-      <p
-        class="text-2xl"
-      >Mengenal lebih jauh tentang produk dan edukasi kami</p>
+        class="font-serif font-light"
+      >Periklanan <div class="font-sans font-black">Melalui Digital</div></h1>
+      <h1
+        class="italic"
+      >Pengelolaan akun media sosial</h1>
+      <span
+        class="flex items-center"
+      >
+        <a
+          href="/about"
+          class="px-6 py-2 text-base text-bg hover:text-bg bg-fg hover:bg-transparent border-2 border-fg rounded-full transition-all duration-500"
+        >Tentang Kami</a>
+        <x-lucide-chevron-right class="size-10" />
+      </span>
     </div>
+  </section>
+
+  <section
+    id="AboutUsSection"
+    class="w-full h-screen bg-linear-to-tl from-white to-[#999797]"
+  >
     <div
-      class="relative w-[60%] mt-10 pt-1 bg-blue-800 rounded-[3rem]"
+      class="w-[90%] h-full mx-auto flex flex-col justify-center items-center"
     >
+      <h1
+        class="text-3xl text-bg uppercase"
+      >Tentang <span class="font-bold">Kami</span></h1>
       <div
-        class="absolute top-5 -left-24 w-50 h-70 py-4 -rotate-25 flex items-center bg-blue-600/60 rounded-[100px/140px]"
+        class="mt-30 flex gap-8"
       >
-        <img src="{{ Vite::asset('resources/img/char-a.svg') }}" alt="char-a" class="absolute top-20 left-15 w-34 rotate-25">
-      </div>
-      <div
-        class="px-12 py-8 bg-white rounded-[2.9rem] shadow-lg"
-      >
+        <img
+          src="assets/images/profile.jpg"
+          alt="profile"
+          class="w-70 rounded-2xl"
+        >
         <p
-          class="ml-20 text-xl text-blue-900"
-        >Kami adalah tim yang berfokus pada layanan <span class="font-black">periklanan digital dan pengelolaan media sosial</span> untuk membantu bisnis meningkatkan visibilitas dan menjangkau audiens yang lebih luas. Dengan memanfaatkan strategi digital yang tepat, kami membantu brand membangun kehadiran online yang kuat, efektif, dan relevan dengan kebutuhan pasar.</p>
+          class="px-20 flex justify-center items-center text-bg text-shadow-sm text-shadow-bg/40 text-justify font-semibold bg-[#D9D9D9] uppercase border-2 border-bg rounded-2xl"
+        >Growdience Creative adalah mitra strategis Anda dalam membangun dan memperluas audiens brand secara kreatif dan terukur. Kami percaya bahwa iklan yang efektif bukan hanya tentang menjangkau banyak orang, tetapi tentang menumbuhkan komunitas yang setia ("Growing an Audience").</p>
       </div>
     </div>
+  </section>
+
+  <section
+    id="ServiceSection"
+    class="w-full h-screen bg-linear-to-tl from-white to-[#999797]"
+  >
     <div
-      class="w-full mt-20"
+      class="w-[90%] h-full mx-auto flex flex-col justify-center items-center"
     >
       <h1
-        class="pl-18 text-4xl text-blue-950 font-bold"
-      >Benefit <span class="font-light italic">kerjasama</span></h1>
+        class="text-3xl text-bg uppercase"
+      >Layanan Yang Kami <span class="font-bold">Tawarkan</span></h1>
       <div
-        class="w-[95%] mx-auto flex gap-18"
+        class="mt-20 w-full flex justify-evenly items-center"
       >
-        <x-cards.about>
-          <h1>Pengelolaan</h1>
-          <p>
-            Setiap sosial media akan di kelola dengan baik untuk meningkatkan Engagement
-            pada media sosial
-          </p>
-        </x-cards.about>
-        <x-cards.about>
-          <h1>Jangkauan</h1>
-          <p>
-            Jangkauan pasar pada Periklanan untuk meningkatkan jumlah pengunjung pada
-            Marketplace
-          </p>
-        </x-cards.about>
-        <x-cards.about>
-          <h1>Digitalisasi</h1>
-          <p>
-            Semua produk penjualan atau periklanan akan dilakukan secara
-            digital untuk
-          </p>
-        </x-cards.about>
-      </div>
-    </div>
-    <hr class="w-[80%] h-1 my-10 border-0 bg-blue-900 rounded-full">
-    <div
-      class="relative w-full py-10 flex"
-    >
-      <div
-        class="relative w-full h-full flex items-center pl-30"
-      >
-        <x-bi-circle-fill class="size-5 mb-6 text-blue-800" />
         <div
-          class="ml-4"
+          class="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-bg rounded-3xl"
         >
           <h1
-            class="text-2xl text-blue-950 font-bold"
-          >2025</h1>
-          <p
-            class="text-blue-800"
-          >Startup</p>
+            class="mt-4 text-2xl font-bold"
+          >Endorsement</h1>
+          <img
+            src="assets/images/endorsement.png"
+            alt="endorsement"
+            class="w-40"
+          >
         </div>
-      </div>
-      <div>
-        <div class="absolute -right-30 w-80 h-50 bg-blue-600/70 rounded-[160px/100px]">
-          <img src="{{ Vite::asset('resources/img/char-b.svg') }}" alt="char-b" class="absolute -top-5 left-15 w-30">
+        <div
+          class="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-bg rounded-3xl"
+        >
+          <h1
+            class="mt-4 text-2xl text-center font-bold"
+          >Social Media Management</h1>
+          <div
+            class="relative mt-6 px-4 grid grid-cols-3 grid-rows-3"
+          >
+            <hr class="absolute -bottom-8 w-87 h-1 -rotate-45 origin-left bg-fg">
+            <x-bi-instagram class="col-start-1 col-span-1 size-19" />
+            <x-fab-tiktok class="col-start-3 col-span-1 row-start-3 size-19" />
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section
-    id="ContactSections"
-    class="mt-30 py-10 flex flex-col items-center bg-blue-700"
+    id="HowToSection"
+    class="w-full h-full bg-linear-to-tl from-white to-[#999797]"
   >
-    <h1
-      class="text-3xl text-white font-bold"
-    >Contact</h1>
     <div
-      class="mt-5 flex items-center gap-5 text-white"
+      class="w-[80%] mx-auto py-20 flex flex-col jus items-center"
     >
-      <x-ri-instagram-fill class="size-17" />
-      <x-bi-facebook class="size-18" />
-      <x-bi-linkedin class="size-14 ml-2" />
+      <h1
+        class="text-3xl text-bg uppercase"
+      >Cara Kita <span class="font-bold">Bekerja</span></h1>
+      <div
+        class="w-full h-full mt-10 grid grid-cols-5 grid-rows-4 gap-y-8"
+      >
+        <div
+          class="col-span-3"
+        >
+          <h1
+            class="text-2xl text-bg font-bold"
+          >Konsultasi & Brief Awal</h1>
+          <p
+            class="px-2 py-4 text-lg font-semibold bg-linear-to-br from-stone-400 to-bg border border-bg rounded-2xl"
+          >Anda mengisi form singkat untuk menjelaskan kebutuhan, tujuan bisnis, dan target audiens. Dari sini, kami menyusun gambaran awal strategi yang paling sesuai.</p>
+        </div>
+        <div
+          class="col-start-3 col-span-3"
+        >
+          <h1
+            class="text-2xl text-bg text-right font-bold"
+          >Penentuan Strategi & Kreator</h1>
+          <p
+            class="px-2 py-4 text-lg font-semibold bg-linear-to-br from-stone-400 to-bg border border-bg rounded-2xl"
+          >Kami memilih konsep konten dan kreator yang relevan dengan brand Anda. Draft konten disiapkan dan diajukan untuk persetujuan sebelum produksi dimulai.</p>
+        </div>
+        <div
+          class="col-span-3"
+        >
+          <h1
+            class="text-2xl text-bg font-bold"
+          >Produksi & Penayangan Konten</h1>
+          <p
+            class="px-2 py-4 text-lg font-semibold bg-linear-to-br from-stone-400 to-bg border border-bg rounded-2xl"
+          >Performa konten dianalisis untuk melihat dampak dan peluang pengembangan. Hasil evaluasi digunakan sebagai dasar optimasi ke depannya.</p>
+        </div>
+        <div
+          class="col-start-3 col-span-3"
+        >
+          <h1
+            class="text-2xl text-bg text-right font-bold"
+          >Monitoring & Evaluasi</h1>
+          <p
+            class="px-2 py-4 text-lg font-semibold bg-linear-to-br from-stone-400 to-bg border border-bg rounded-2xl"
+          >Konten diproduksi dan dipublikasikan sesuai jadwal yang telah disepakati. Setiap proses dijalankan secara bertahap dan terkontrol.</p>
+        </div>
+      </div>
     </div>
   </section>
 @endsection

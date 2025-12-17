@@ -9,10 +9,12 @@
         "php": "^8.2",
         "andreiio/blade-iconoir": "^4.7",
         "andreiio/blade-remix-icon": "^3.7",
+        "codeat3/blade-unicons": "^1.9",
         "davidhsianturi/blade-bootstrap-icons": "^2.1",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "mallardduck/blade-lucide-icons": "^1.24",
+        "owenvoke/blade-fontawesome": "^2.9",
         "saade/blade-iconsax": "^1.2"
     },
     "require-dev": {
