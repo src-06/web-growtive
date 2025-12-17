@@ -29,7 +29,7 @@ Website periklanan digital untuk tugas project kuliah.
 	cd web-growtive
 	```
 
-2. Copy/cut/rename file '.env.local' jadi '.env'
+2. Copy/cut/rename file '.env.example' jadi '.env'
 3. Install package dependencies
 
 	```bash
@@ -37,13 +37,18 @@ Website periklanan digital untuk tugas project kuliah.
 	composer install
 	```
 
-4. Migrasi database
+4. Generate APP_KEY
+	```bash
+	php artisan key:generate
+	```
+
+5. Migrasi database
 
 	```bash
 	php artisan migrate
 	```
 
-5. Tinggal running di local
+6. Tinggal running di local
 
 	```bash
 	npm run dev
