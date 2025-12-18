@@ -34,7 +34,7 @@
 
   <section
     id="AboutSection"
-    class="w-full h-full -mt-30 pt-35 pb-10 bg-linear-to-tl from-white to-[#999797] rounded-t-[3rem]"
+    class="w-full h-full -mt-10 pt-20 pb-10 bg-linear-to-tl from-white to-[#999797] rounded-t-[3rem]"
   >
     <div
       class="w-[90%] mx-auto grid grid-cols-2 grid-rows-2 text-bg"
@@ -149,6 +149,7 @@
       >Paket Kami</h1>
       <x-services.card
         icon="ig"
+        id="instagram"
         nama="Instagram"
         detail="Harga Kelola Feed & Story Instagram"
         class="overflow-x-auto"
@@ -252,6 +253,7 @@
       </x-services.card>
       <x-services.card
         icon="tt"
+        id="tiktok"
         nama="Tiktok"
         detail="Harga Kelola Video Tiktok"
         class=""
@@ -307,6 +309,7 @@
       </x-services.card>
       <x-services.card2
         class=""
+        id="instagram_tiktok"
       >
         <x-services.card-paket
           paket="Hanya Feed Dan Story"

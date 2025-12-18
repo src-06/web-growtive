@@ -70,7 +70,8 @@
       <div
         class="mt-20 w-full flex justify-evenly items-center"
       >
-        <div
+        <a
+          href="/endors"
           class="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-bg rounded-3xl"
         >
           <h1
@@ -81,8 +82,9 @@
             alt="endorsement"
             class="w-40"
           >
-        </div>
-        <div
+        </a>
+        <a
+          href="/services"
           class="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-bg rounded-3xl"
         >
           <h1
@@ -95,7 +97,7 @@
             <x-bi-instagram class="col-start-1 col-span-1 size-19" />
             <x-fab-tiktok class="col-start-3 col-span-1 row-start-3 size-19" />
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>

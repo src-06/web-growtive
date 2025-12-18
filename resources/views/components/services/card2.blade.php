@@ -1,4 +1,5 @@
 <div
+  id="{{ $id }}"
   class="w-full h-fit px-6 py-20 grid grid-cols-4 gap-1 bg-white rounded-[3rem]"
 >
   <div

@@ -90,7 +90,7 @@
 
   <section
     id="WorkSection"
-    class="w-full h-full bg-fg text-bg"
+    class="w-full h-full py-16 bg-fg text-bg"
   >
     <div
       class="w-[90%] h-full mx-auto pt-8 pb-20 flex flex-wrap justify-center items-center gap-10"
