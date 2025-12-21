@@ -3,10 +3,15 @@ Website periklanan digital untuk tugas project kuliah.
 
 ### Hal-hal yang dipersiapkan sebelum setup project ini
 
-[Arch Linux Based](#instalasi-untuk-arch-linux-based)
-[NixOS Based](#instalasi-untuk-nixos-based)
-[Debian/Ubuntu Based](#instalasi-untuk-debianubuntu-based)
-[Fedora Based](#instalasi-untuk-fedora-based)
+[Arch Linux](#package-yang-diperlukan-untuk-arch-linux-based)
+
+[NixOS](#package-yang-diperlukan-untuk-nixos-based)
+
+[Debian/Ubuntu](#package-yang-diperlukan-untuk-debianubuntu-based)
+
+[Fedora](#package-yang-diperlukan-untuk-fedora-based)
+
+[Windows](#package-yang-diperlukan-untuk-windows)
 
 ### Setup
 [Langkah-langkah setup](#langkah-langkah-setup)
