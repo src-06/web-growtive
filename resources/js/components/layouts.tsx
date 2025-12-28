@@ -41,7 +41,7 @@ export default function Layouts({ children }: { children?: React.ReactNode }) {
       </div>
       <a
         id="contact-wa"
-        href="https://wa.me/6281224510817"
+        href="https://web.whatsapp.com/send/?phone=6281224510817&text&type=phone_number&app_absent=0"
         target="_blank"
         className="opacity-0 fixed bottom-28 right-6 size-14"
       >

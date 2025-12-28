@@ -1,4 +1,4 @@
-import { Head } from "@inertiajs/react"
+import { Head, Link } from "@inertiajs/react"
 import Layouts from "@/components/layouts"
 import { FaInstagram, FaTiktok } from "react-icons/fa6"
 import { LuChevronRight } from "react-icons/lu"
@@ -29,10 +29,10 @@ export default function Home() {
           <span
             className="flex items-center"
           >
-            <a
+            <Link
               href="/about"
               className="px-6 py-2 text-base text-bg hover:text-bg bg-fg hover:bg-transparent border-2 border-fg rounded-full transition-all duration-500"
-            >Tentang Kami</a>
+            >Tentang Kami</Link>
             <LuChevronRight className="size-10" />
           </span>
         </div>
@@ -76,7 +76,7 @@ export default function Home() {
           <div
             className="mt-20 w-full flex justify-evenly items-center"
           >
-            <a
+            <Link
               href="/endors"
               className="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-bg rounded-3xl"
             >
@@ -88,8 +88,8 @@ export default function Home() {
                 alt="endorsement"
                 className="w-40"
               />
-            </a>
-            <a
+            </Link>
+            <Link
               href="/services"
               className="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-bg rounded-3xl"
             >
@@ -103,7 +103,7 @@ export default function Home() {
                 <FaInstagram className="col-start-1 col-span-1 size-19" />
                 <FaTiktok className="col-start-3 col-span-1 row-start-3 size-19" />
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

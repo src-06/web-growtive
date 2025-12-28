@@ -1,4 +1,4 @@
-import { Head } from "@inertiajs/react"
+import { Head, Link } from "@inertiajs/react"
 import Layouts from "@/components/layouts"
 import { Card } from "@/components/services/card"
 import { CardPaket } from "@/components/services/card-paket"
@@ -27,9 +27,9 @@ export default function Services() {
             <h1
               className="text-5xl font-bold"
             >Pengelolaan Media Sosial</h1>
-            <p
+            <div
               className="w-75 mt-10 text-lg"
-            >Solusi kreatif yang mempercepat perjalanan konsumen dari <div>lihat → tertarik → beli.</div></p>
+            >Solusi kreatif yang mempercepat perjalanan konsumen dari <p>lihat → tertarik → beli.</p></div>
           </div>
           <img
             src="/assets/images/services.png"
@@ -102,10 +102,10 @@ export default function Services() {
               className="text-2xl font-bold"
             >Konten Instagram</h1>
             <p>Layanan konten dan kelola media sosial Instagram bisnis atau perusahaan anda.</p>
-            <a
+            <Link
               href="#instagram"
               className="w-[70%] py-3 uppercase text-bg bg-[#FFC00B] hover:opacity-80 rounded-2xl transition-opacity"
-            >Lihat Paket</a>
+            >Lihat Paket</Link>
           </div>
           <div
             className="z-10 pb-2 px-3 flex flex-col justify-center items-center gap-5 bg-[#C4C4C4] border-3 border-white rounded-3xl"
@@ -119,10 +119,10 @@ export default function Services() {
               className="text-2xl font-bold"
             >Konten Instagram</h1>
             <p>Layanan konten dan kelola media sosial Instagram bisnis atau perusahaan anda.</p>
-            <a
+            <Link
               href="#tiktok"
               className="w-[70%] py-3 uppercase text-bg bg-[#FFC00B] hover:opacity-80 rounded-2xl transition-opacity"
-            >Lihat Paket</a>
+            >Lihat Paket</Link>
           </div>
           <div
             className="z-10 pb-2 px-3 flex flex-col justify-center items-center gap-5 bg-[#C4C4C4] border-3 border-white rounded-3xl"
@@ -136,10 +136,10 @@ export default function Services() {
               className="text-2xl font-bold"
             >Konten Instagram</h1>
             <p>Layanan konten dan kelola media sosial Instagram bisnis atau perusahaan anda.</p>
-            <a
+            <Link
               href="#instagram_tiktok"
               className="w-[70%] py-3 uppercase text-bg bg-[#FFC00B] hover:opacity-80 rounded-2xl transition-opacity"
-            >Lihat Paket</a>
+            >Lihat Paket</Link>
           </div>
         </div>
       </section>
