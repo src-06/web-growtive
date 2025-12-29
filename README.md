@@ -70,4 +70,4 @@ choco install git php composer nodejs
 	composer dev
 	```
 
-4. Buka broser dan ketik `localhost:8000`
+4. Buka browser dan ketik [`localhost:8000`](http://localhost:8000)
