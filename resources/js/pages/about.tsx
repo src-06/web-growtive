@@ -8,37 +8,40 @@ export default function About() {
 
       <section
         id="HeroSection"
-        className="w-[90%] h-dvh mx-auto flex justify-evenly items-center gap-36"
+        className="relative bg-linear-to-r from-bg to-fg"
       >
-        <img
-          src="/assets/images/bg/about.svg"
-          alt="bg-header"
-          className="-z-50 absolute -top-0.5 left-0 w-full"
-        />
-        <h1
-          className="text-7xl font-bold uppercase"
-        >Tentang kami</h1>
-        <img
-          src="/assets/images/about-hero.png"
-          alt="about-hero"
-          className="w-85"
-        />
+        {/* NOTE: Backgrounds */}
+        <div className="z-1 absolute -top-20 -left-20 w-120 h-70 -rotate-25 bg-linear-to-b from-bg via-[#333] to-[#666] rounded-[240px/140px]" />
+        <div className="z-1 absolute bottom-[20dvh] right-0 w-85 h-70 bg-linear-to-b from-fg to-[#555] rounded-l-4xl" />
+
+        {/* NOTE: Contents */}
+        <div
+          className="w-[90%] h-dvh mx-auto flex justify-evenly items-center gap-36"
+        >
+          <h1
+            className="text-7xl font-bold uppercase"
+          >Tentang kami</h1>
+          <img
+            src="/assets/images/about-hero.png"
+            alt="about-hero"
+            className="z-10 w-85"
+          />
+        </div>
       </section>
 
       <section
         id="AboutSection"
-        className="relative w-full h-screen"
+        className="-z-50 relative w-full h-screen bg-linear-to-br from-fg via-[#999] to-[#555]"
       >
-        <img
-          src="/assets/images/bg/about1.svg"
-          alt="bg-header"
-          className="-z-50 absolute -top-0.5 left-0 w-full"
-        />
+        {/* NOTE: Backgrounds */}
+        <div className="absolute -top-20 -left-20 w-120 h-70 -rotate-25 bg-[#cacaca] rounded-[240px/140px]" />
+
+        {/* NOTE: Contents */}
         <div
           className="w-[90%] mx-auto h-full flex justify-evenly items-center gap-10"
         >
           <div
-            className="w-140"
+            className="z-0 w-140"
           >
             <p
               className="p-10 flex justify-center items-center text-bg text-shadow-sm text-shadow-bg/40 text-justify font-semibold bg-[#D9D9D9]/60 uppercase border-2 border-bg rounded-2xl"
@@ -54,15 +57,19 @@ export default function About() {
 
       <section
         id="VMSection"
-        className="relative w-full h-screen"
+        className="relative w-full h-screen flex justify-center items-center bg-linear-to-l from-[#555] to-fg"
       >
+        {/* NOTE: Backgrounds */}
+        <div className="w-[60%] h-[61%] bg-fg rounded-2xl" />
         <img
-          src="/assets/images/bg/about2.svg"
-          alt="bg-header"
-          className="-z-50 absolute -top-0.5 left-0 w-full"
+          src="assets/images/about-vm.png"
+          alt="about-vm"
+          className="absolute bottom-0 left-0 w-[25%]"
         />
+
+        {/* NOTE: Contents */}
         <div
-          className="relative w-[90%] mx-auto h-full -mt-1 flex flex-col justify-center items-center gap-10"
+          className="absolute top-0 w-full h-full p-20 flex flex-col justify-center items-center gap-10"
         >
           <h1
             className="text-4xl text-bg font-bold"
@@ -71,13 +78,13 @@ export default function About() {
             className="mb-22 flex gap-4 text-bg"
           >
             <div
-              className="h-fit p-8 bg-white shadow shadow-bg/30 rounded-3xl"
+              className="h-fit p-8 bg-white/80 shadow shadow-bg/30 rounded-3xl"
             >
               <h1>VISI</h1>
               <p>Menjadi mitra strategis terdepan dalam transformasi digital dan branding bagi pelaku usaha di Indonesia.</p>
             </div>
             <div
-              className="p-8 bg-white shadow shadow-bg/30 rounded-3xl"
+              className="p-8 bg-white/80 shadow shadow-bg/30 rounded-3xl"
             >
               <h1>MISI</h1>
               <ul

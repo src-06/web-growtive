@@ -36,7 +36,7 @@ export default function Endors() {
 
       <section
         id="WhatSection"
-        className="-z-50 relative w-full h-full py-8 bg-linear-to-tl from-white to-[#999797]"
+        className="-z-50 relative w-full h-full -mt-10 pt-25 pb-10 bg-linear-to-tl from-white to-[#999797] rounded-t-[3rem]"
       >
         <div
           className="absolute top-10 left-[calc(1/2*100%-40%)]"

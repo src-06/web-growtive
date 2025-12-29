@@ -1,5 +1,5 @@
 import { router, usePage } from "@inertiajs/react";
-import Layouts from "./components/layouts";
+import Layouts from "@/components/admin/layouts";
 import { route } from "ziggy-js";
 
 export default function Profile() {

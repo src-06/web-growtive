@@ -1,5 +1,5 @@
 import { User } from "@/types"
-import Layouts from "./components/layouts"
+import Layouts from "@/components/admin/layouts"
 
 export default function AdminPanel({ users }: { users: User[] }) {
   return (

@@ -1,5 +1,5 @@
 
-export function Card({ id, icon, nama, detail, children }: { id: string; icon: string; nama: string; detail: string; children: React.ReactNode }) {
+export function Card({ id, icon, nama, detail, children, count }: { id: string; icon: string; nama: string; detail: string; children: React.ReactNode; count: number }) {
   return (
     <div
       id={`${id}`}
@@ -29,7 +29,7 @@ export function Card({ id, icon, nama, detail, children }: { id: string; icon: s
         className="ml-4 col-span-3"
       >
         <div
-          className={`grid grid-cols-6 gap-75 text-fg overflow-x-auto`}
+          className={`w-full grid grid-cols-${count} ${count == 6 ? 'gap-75' : 'gap-13'} text-fg overflow-x-auto`}
         >{children}</div>
       </div>
     </div>

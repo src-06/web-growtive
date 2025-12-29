@@ -1,10 +1,10 @@
 import { User, Users } from "@/types";
-import Layouts from "./components/layouts";
-import { Link, router, usePage } from "@inertiajs/react";
+import Layouts from "@/components/admin/layouts";
+import { router, usePage } from "@inertiajs/react";
 import { route } from "ziggy-js";
-import { ChangeEvent } from "react";
 import { cn } from "@/lib/utils";
-import { LuChevronLeft, LuChevronRight, LuChevronsLeft, LuChevronsRight } from "react-icons/lu";
+import { RoleSelect } from "@/components/admin/users/role_select";
+import { Pagination } from "@/components/admin/users/pagination";
 
 export default function UserPage({ users }: { users: Users }) {
   const destroy = (id: number, name: string) => {
@@ -75,72 +75,5 @@ function TD({ children, className }: { children: React.ReactNode; className?: st
     >
       { children }
     </td>
-  )
-}
-
-function RoleSelect({ user, canEdit }: { user: User; canEdit: boolean }) {
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    e.preventDefault()
-    if (!canEdit && confirm(`Mau ubah role ${user.name}?`))
-      router.patch(route('users.update', user.id), { 'role': e.target.value })
-    else e.target.value = user.role
-  }
-
-  return (
-    canEdit ?
-      <span className="font-bold uppercase">{ user.role }</span>
-    : <select
-        defaultValue={ user.role }
-        onChange={e => handleChange(e)}
-        className="font-bold"
-      >
-        <option value="admin">ADMIN</option>
-        <option value="user">USER</option>
-      </select>
-  )
-}
-
-function Pagination({ users }: { users: Users }) {
-  const pages = []; for (let _ = 1; _ <= users.last_page; _++)
-    pages.push(_)
-
-  return (
-    <div
-      className="flex justify-center items-center gap-2"
-    >
-      <Button
-        disabled={!usePage().url.includes('?page='+users.current_page)}
-      ><LuChevronsLeft size={20} strokeWidth={3} /></Button>
-      <Button
-        to={users.current_page-1}
-        disabled={users.current_page == 1}
-      ><LuChevronLeft size={20} strokeWidth={3} /></Button>
-      { pages.map(page =>
-        <Button
-          key={page}
-          to={page}
-          active={users.current_page === page}
-        >{ page }</Button>
-      )}
-      <Button
-        to={users.current_page+1}
-        disabled={users.current_page == users.last_page}
-      ><LuChevronRight size={20} strokeWidth={3} /></Button>
-      <Button
-        to={users.last_page}
-        disabled={users.current_page == users.last_page}
-      ><LuChevronsRight size={20} strokeWidth={3} /></Button>
-    </div>
-  )
-}
-
-function Button({ children, to, active, disabled, ...props }: { children: React.ReactNode; to?: number; active?: boolean; disabled?: boolean }) {
-  return (
-    <button
-      onClick={() => router.get('/admin/users', { page: to })}
-      className={`size-7 flex justify-center items-center ${active || !disabled && active == undefined ? 'text-white' : 'text-fg/70' } font-bold bg-bg rounded-md`}
-      disabled={disabled}
-      {...props}
-    >{ children }</button>
   )
 }

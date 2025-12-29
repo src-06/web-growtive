@@ -11,15 +11,15 @@ export default function Services() {
 
       <section
         id="HeroSection"
-        className="w-[90%] h-[calc(100dvh-10dvh)] mx-auto flex justify-center items-center gap-12"
+        className="relative flex justify-center items-center gap-12 overflow-hidden"
       >
         <img
-          src="/assets/images/bg/services.svg"
-          alt="bg-header"
-          className="-z-50 absolute -top-0.5 left-0 w-full"
+          src="/assets/images/bg/endors.svg"
+          alt="bg-endors"
+          className="-z-50 absolute -left-0.5 w-full scale-101"
         />
         <div
-          className="flex justify-center gap-30"
+          className="w-[90%] h-dvh mx-auto flex justify-center items-center gap-30"
         >
           <div
             className="w-150"
@@ -58,13 +58,18 @@ export default function Services() {
           <div
             className="p-8 flex flex-col gap-y-3"
           >
+            <h1
+              className="text-2xl font-bold"
+            >Apa Itu Social Media?</h1>
             <p>Social Media Management adalah layanan pengelolaan akun media sosial secara strategis untuk membantu bisnis membangun kehadiran digital yang konsisten, relevan, dan berdampak pada pertumbuhan.</p>
             <p>Layanan ini cocok untuk bisnis yang ingin fokus menjalankan operasional, sementara strategi dan eksekusi media sosial ditangani secara konsisten dan terukur.</p>
           </div>
           <div
             className="p-8 flex flex-col gap-y-3"
           >
-            <p>Kenapa Social Media Management Penting?</p>
+            <h1
+              className="text-2xl font-bold"
+            >Kenapa Social Media Management Penting?</h1>
             <p>Tanpa pengelolaan yang tepat, media sosial hanya menjadi aktivitas rutin tanpa hasil yang jelas. Dengan strategi yang terarah, media sosial menjadi aset yang mendukung pertumbuhan bisnis jangka panjang.</p>
           </div>
           <div
@@ -159,6 +164,7 @@ export default function Services() {
             id="instagram"
             nama="Instagram"
             detail="Harga Kelola Feed & Story Instagram"
+            count={6}
           >
             <CardPaket
               paket="Hanya Feed Dan Story"
@@ -259,9 +265,10 @@ export default function Services() {
             id="tiktok"
             nama="Tiktok"
             detail="Harga Kelola Video Tiktok"
+            count={3}
           >
             <CardPaket
-              paket="Hanya Feed Dan Story"
+              paket="Harga Bawah"
               price1="1.499k/bulan"
               price2="(minimal order 3 bulan)"
             >
@@ -273,7 +280,7 @@ export default function Services() {
               <li>Jadwal Posting</li>
             </CardPaket>
             <CardPaket
-              paket="Hanya Feed Dan Story"
+              paket="Harga Menengah"
               price1="1.999k/bulan"
             >
               <li>15 Konten tiktok</li>
@@ -290,7 +297,7 @@ export default function Services() {
               <li>Balas Komen & DM</li>
             </CardPaket>
             <CardPaket
-              paket="Hanya Feed Dan Story"
+              paket="Harga Highclass"
               price1="2.699k/bulan"
             >
               <li>20 Konten tiktok</li>
@@ -309,9 +316,10 @@ export default function Services() {
           </Card>
           <Card2
             id="instagram_tiktok"
+            count={3}
           >
             <CardPaket
-              paket="Hanya Feed Dan Story"
+              paket="Harga Minimal"
               price1="3.499k/bulan"
               price2="(minimal order 3 bulan)"
             >
@@ -325,7 +333,7 @@ export default function Services() {
               <li>Riset Hastag</li>
             </CardPaket>
             <CardPaket
-              paket="Hanya Feed Dan Story"
+              paket="Harga Menengah"
               price1="3.999k/bulan"
               price2="(minimal order 3 bulan)"
             >
@@ -339,7 +347,7 @@ export default function Services() {
               <li>Riset Hastag</li>
             </CardPaket>
             <CardPaket
-              paket="Hanya Feed Dan Story"
+              paket="Harga Highclass"
               price1="4.699k/bulan"
               price2="(minimal order 3 bulan)"
             >
