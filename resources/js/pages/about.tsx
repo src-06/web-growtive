@@ -22,7 +22,7 @@ export default function About() {
             className="text-7xl font-bold uppercase"
           >Tentang kami</h1>
           <img
-            src="/assets/images/about-hero.png"
+            src="/assets/images/about/hero.png"
             alt="about-hero"
             className="z-10 w-85"
           />
@@ -48,7 +48,7 @@ export default function About() {
             >Growdience Creative adalah Industri kreatif yang didirikan pada tahun 2025 dengan komitmen kuat untuk mendorong pertumbuhan bisnis melalui strategi digital yang inovatif. Pendirian Growdience terinspirasi dari dinamika industri kreatif dan kebutuhan mendesak UMKM Indonesia untuk beradaptasi serta unggul di ranah digital, sejalan dengan visi agensi terkemuka di sektor ini.</p>
           </div>
           <img
-            src="/assets/images/profile.jpg"
+            src="/assets/images/about/profile.jpg"
             alt="about-hero"
             className="w-70 rounded-2xl"
           />
@@ -62,7 +62,7 @@ export default function About() {
         {/* NOTE: Backgrounds */}
         <div className="w-[60%] h-[61%] bg-fg rounded-2xl" />
         <img
-          src="assets/images/about-vm.png"
+          src="assets/images/about/visi-misi.png"
           alt="about-vm"
           className="absolute bottom-0 left-0 w-[25%]"
         />

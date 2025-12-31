@@ -15,8 +15,8 @@ export function Card2({ id, children, count }: { id: string; children: React.Rea
             className="w-full flex items-center gap-2"
           >
             <img
-              src="assets/images/services-tt.svg"
-              alt="services-tt"
+              src="assets/images/services/tt.svg"
+              alt="tt"
               className="w-15"
             />
             <h1>Tiktok</h1>
@@ -26,8 +26,8 @@ export function Card2({ id, children, count }: { id: string; children: React.Rea
             className="w-full flex items-center gap-2"
           >
             <img
-              src="assets/images/services-ig.svg"
-              alt="services-ig"
+              src="assets/images/services/ig.svg"
+              alt="ig"
               className="w-15"
             />
             <h1>Instagram</h1>

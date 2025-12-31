@@ -27,7 +27,7 @@ export default function Endors() {
             <p>Kami memanfaatkan pengaruh influencer yang tepat untuk membuat produk Anda dipercaya lebih cepat, dibicarakan lebih luas, dan mendorong audiens langsung ke tindakan pembelian.</p>
           </div>
           <img
-            src="/assets/images/endors.png"
+            src="/assets/images/endors/hero.png"
             alt="endors"
             className="w-[40%]"
           />
@@ -42,12 +42,12 @@ export default function Endors() {
           className="absolute top-10 left-[calc(1/2*100%-40%)]"
         >
           <img
-            src="/assets/images/endors1.png"
+            src="/assets/images/endors/about1.png"
             alt="endors1"
             className="z-0 relative top-10 left-10 w-55"
           />
           <img
-            src="/assets/images/endors2.png"
+            src="/assets/images/endors/about2.png"
             alt="endors2"
             className="z-1 relative top-0 left-30 w-55"
           />
@@ -123,7 +123,7 @@ export default function Endors() {
           className="relative mt-35 pb-30 flex justify-center items-center"
         >
           <img
-            src="/assets/images/endors-d.svg"
+            src="/assets/images/endors/contact-us.svg"
             alt="endors-d"
             className="w-[80%]"
           />

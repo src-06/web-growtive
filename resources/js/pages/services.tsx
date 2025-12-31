@@ -32,7 +32,7 @@ export default function Services() {
             >Solusi kreatif yang mempercepat perjalanan konsumen dari <p>lihat → tertarik → beli.</p></div>
           </div>
           <img
-            src="/assets/images/services.png"
+            src="/assets/images/services/hero.png"
             alt="services"
             className="w-100 rounded-4xl"
           />
@@ -50,7 +50,7 @@ export default function Services() {
             className="w-full h-full flex justify-center items-center"
           >
             <img
-              src="assets/images/services-about1.png"
+              src="assets/images/services/about1.png"
               alt="services-about1"
               className="w-70 rounded-full"
             />
@@ -76,7 +76,7 @@ export default function Services() {
             className="w-full h-full flex justify-center items-center"
           >
             <img
-              src="assets/images/services-about2.png"
+              src="assets/images/services/about2.png"
               alt="services-about2"
               className="w-70 rounded-full"
             />
@@ -99,7 +99,7 @@ export default function Services() {
             className="z-10 pb-2 px-3 flex flex-col justify-center items-center gap-5 bg-[#C4C4C4] border-3 border-white rounded-3xl"
           >
             <img
-              src="assets/images/services-ig.svg"
+              src="assets/images/services/ig.svg"
               alt="services-ig"
               className="h-20 -mt-10"
             />
@@ -116,7 +116,7 @@ export default function Services() {
             className="z-10 pb-2 px-3 flex flex-col justify-center items-center gap-5 bg-[#C4C4C4] border-3 border-white rounded-3xl"
           >
             <img
-              src="assets/images/services-tt.svg"
+              src="assets/images/services/tt.svg"
               alt="services-ig"
               className="h-20 -mt-10 bg-white rounded-2xl"
             />
@@ -133,7 +133,7 @@ export default function Services() {
             className="z-10 pb-2 px-3 flex flex-col justify-center items-center gap-5 bg-[#C4C4C4] border-3 border-white rounded-3xl"
           >
             <img
-              src="assets/images/services-ig-tt.svg"
+              src="assets/images/services/ig-tt.svg"
               alt="services-ig"
               className="h-20 -mt-10"
             />

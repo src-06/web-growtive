@@ -15,8 +15,8 @@ export function Card({ id, icon, nama, detail, children, count }: { id: string; 
             className="flex items-center gap-2"
           >
             <img
-              src={`assets/images/services-${icon}.svg`}
-              alt={`services-${icon}`}
+              src={`assets/images/services/${icon}.svg`}
+              alt={`${icon}`}
               className="w-15"
             />
             <h1>{nama}</h1>
@@ -29,7 +29,7 @@ export function Card({ id, icon, nama, detail, children, count }: { id: string; 
         className="ml-4 col-span-3"
       >
         <div
-          className={`w-full grid grid-cols-${count} ${count == 6 ? 'gap-75' : 'gap-13'} text-fg overflow-x-auto`}
+          className={`grid ${count == 6 ? 'grid-cols-6' : 'grid-cols-3' } ${count == 6 ? 'gap-75' : 'gap-13'} grid-rows-1 text-fg overflow-x-auto`}
         >{children}</div>
       </div>
     </div>

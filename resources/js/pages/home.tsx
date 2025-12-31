@@ -13,8 +13,8 @@ export default function Home() {
         className="w-[90%] h-dvh mx-auto pt-40 pb-30 flex justify-center items-center gap-12"
       >
         <img
-          src="assets/images/bg/header.svg"
-          alt="bg-header"
+          src="assets/images/bg/home.svg"
+          alt="bg-home"
           className="-z-50 absolute -top-0.5 left-0 w-full"
         />
         <div
@@ -52,7 +52,7 @@ export default function Home() {
             className="mt-30 flex gap-8"
           >
             <img
-              src="assets/images/profile.jpg"
+              src="assets/images/about/profile.jpg"
               alt="profile"
               className="w-70 rounded-2xl"
             />
@@ -84,7 +84,7 @@ export default function Home() {
                 className="mt-4 text-2xl font-bold"
               >Endorsement</h1>
               <img
-                src="assets/images/endorsement.png"
+                src="assets/images/endors/service.png"
                 alt="endorsement"
                 className="w-40"
               />
