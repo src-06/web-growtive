@@ -151,7 +151,7 @@ export default function Services() {
 
       <section
         id="PaketSection"
-        className="w-full h-full py-20 bg-linear-to-br from-white to-[#999797]"
+        className="w-full h-full pt-20 pb-40 bg-linear-to-br from-white to-[#999797]"
       >
         <div
           className="w-[90%] mx-auto flex flex-col items-center gap-30 text-bg"

@@ -1,5 +1,7 @@
 import { Head } from "@inertiajs/react"
 import Layouts from "@/components/layouts"
+import { LuChevronDown } from "react-icons/lu"
+import { useEffect } from "react"
 
 export default function Endors() {
   return (
@@ -36,7 +38,7 @@ export default function Endors() {
 
       <section
         id="WhatSection"
-        className="-z-50 relative w-full h-full -mt-10 pt-25 pb-10 bg-linear-to-tl from-white to-[#999797] rounded-t-[3rem]"
+        className="relative w-full h-full -mt-10 pt-25 pb-10 bg-linear-to-tl from-white to-[#999797] rounded-t-[3rem]"
       >
         <div
           className="absolute top-10 left-[calc(1/2*100%-40%)]"
@@ -77,50 +79,12 @@ export default function Endors() {
           className="py-12 text-bg"
         >
           <h1
-            className="ml-20 mb-6 text-5xl font-bold"
+            className="ml-20 text-5xl font-bold"
           >Proses Pengaplikasian</h1>
-          <div
-            className="w-full flex justify-evenly"
-          >
-            <div>
-              <h1
-                className="mb-2 ml-4 text-xl font-bold"
-              >Langkah 1</h1>
-              <p
-                className="w-60 h-full px-5 pt-4 bg-white rounded-3xl"
-              >Kami akan bekerja sama untuk menentukan jenis endorsement yang sesuai dengan tujuan brand dan audiens target anda. Tentu dengan mempertimbangkan nilai, citra, dan relevansi orang atau merek yang ingin anda dukung.</p>
-            </div>
-            <div>
-              <h1
-                className="mb-2 ml-4 text-xl font-bold"
-              >Langkah 2</h1>
-              <p
-                className="w-60 h-full px-5 pt-4 bg-white rounded-3xl"
-              >Setelah kami mengidentifikasi endorser potensial, kami menjangkau mereka dan menyajikan proposisi nilai kami sambil memasuki negosiasi yang tepat terkait ketentuan endorsemen.</p>
-            </div>
-            <div>
-              <h1
-                className="mb-2 ml-4 text-xl font-bold"
-              >Langkah 3</h1>
-              <p
-                className="w-60 h-full px-5 pt-4 bg-white rounded-3xl"
-              >Setelah perjanjian dibuat, kami akan bekerja dengan endorser untuk melaksanakan endorsement. Ini melibatkan pembuatan konten, berpartisipasi dalam acara atau projek, menampilkan endorser dalam materi iklan dan banyak lagi.</p>
-            </div>
-            <div>
-              <h1
-                className="mb-2 ml-4 text-xl font-bold"
-              >Langkah 4</h1>
-              <div
-                className="w-60 h-full px-5 pt-4 bg-white rounded-3xl"
-              >
-                <p>Kami akan secara teratur memantau dan mengukur dampak dari endorsement tersebut.</p>
-                <p>Cara nya dengan melacak indikator kinerja utama seperti peningkatan kesadaran brand, traffic website, penjualan produk, dan keterlibatan media sosial.</p>
-              </div>
-            </div>
-          </div>
+          <ApplicationProcess />
         </div>
         <div
-          className="relative mt-35 pb-30 flex justify-center items-center"
+          className="mt-25 pb-30 flex justify-center items-center"
         >
           <img
             src="/assets/images/endors/contact-us.svg"
@@ -130,5 +94,92 @@ export default function Endors() {
         </div>
       </section>
     </Layouts>
+  )
+}
+
+interface ProcessProps {
+  title: string
+  img: string
+  detail: string
+}
+
+const process: ProcessProps[] = [
+  {
+    title: "Konsultasi",
+    img: "konsultasi.png",
+    detail: "Konsultasi adalah proseskomunikasi atau pertemuan antara dua pihak atau lebih untuk mendiskusikan, berbagi informasi, dan mencapai keputusan atau solusi terkait suatu masalah atau topik tertentu. Dalam konteks lain, konsultasi juga dapat diartikan sebagai pertukaran pikiran untuk mendapatkan kesimpulan, seperti nasihat atau saran.",
+  },
+  {
+    title: "Negosiasi Kebutuhan",
+    img: "negosiasi.png",
+    detail: "Konsultasi adalah proseskomunikasi atau pertemuan antara dua pihak atau lebih untuk mendiskusikan, berbagi informasi, dan mencapai keputusan atau solusi terkait suatu masalah atau topik tertentu. Dalam konteks lain, konsultasi juga dapat diartikan sebagai pertukaran pikiran untuk mendapatkan kesimpulan, seperti nasihat atau saran.",
+  },
+  {
+    title: "Pengerjaan & Revisi",
+    img: "pengerjaan.png",
+    detail: "Konsultasi adalah proseskomunikasi atau pertemuan antara dua pihak atau lebih untuk mendiskusikan, berbagi informasi, dan mencapai keputusan atau solusi terkait suatu masalah atau topik tertentu. Dalam konteks lain, konsultasi juga dapat diartikan sebagai pertukaran pikiran untuk mendapatkan kesimpulan, seperti nasihat atau saran.",
+  },
+  {
+    title: "Publish",
+    img: "publish.png",
+    detail: "Konsultasi adalah proseskomunikasi atau pertemuan antara dua pihak atau lebih untuk mendiskusikan, berbagi informasi, dan mencapai keputusan atau solusi terkait suatu masalah atau topik tertentu. Dalam konteks lain, konsultasi juga dapat diartikan sebagai pertukaran pikiran untuk mendapatkan kesimpulan, seperti nasihat atau saran.",
+  },
+]
+
+function ApplicationProcess() {
+  useEffect(() => {
+    for (let id = 0; id < process.length; id++) {
+      const detail = document.getElementById("detail-"+id)
+      const button = document.getElementById("button-"+id)
+
+      button?.addEventListener("click", () => {
+        if (detail?.classList.contains("h-0")) {
+          detail.classList.remove("h-0")
+          detail.classList.add("h-full")
+        } else {
+          detail?.classList.remove("h-full")
+          detail?.classList.add("h-0")
+        }
+
+        if (detail?.classList.contains("opacity-0")) {
+          detail.classList.remove("opacity-0")
+          detail.classList.add("opacity-100")
+        } else {
+          detail?.classList.remove("opacity-100")
+          detail?.classList.add("opacity-0")
+        }
+
+        if (button.classList.contains("rotate-180"))
+          button.classList.remove("rotate-180")
+        else button.classList.add("rotate-180")
+      })
+    }
+  }, [])
+
+  return (
+    <div
+      className="w-[95%] mt-20 mx-auto grid grid-cols-4 gap-4"
+    >
+      { process.map((data, index) =>
+        <div
+          key={index}
+          className="relative h-fit p-6 flex flex-col justify-between items-center gap-4 bg-[#D9D9D9] rounded-3xl shadow-xl shadow-bg/30"
+        >
+          <h1 className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 flex justify-center items-center text-4xl text-fg font-bold bg-linear-to-b from-bg to-[#9e9e9e] rounded-full p-4">{index+1}</h1>
+          <img src={`/assets/images/endors/${data.img}`} alt={data.title} />
+          <h2
+            className="h-20 text-3xl text-center font-semibold"
+          >{data.title}</h2>
+          <p
+            id={"detail-"+index}
+            className="h-0 opacity-0 text-pretty underline"
+          >{data.detail}</p>
+          <button
+            id={"button-"+index}
+            className="z-50 cursor-pointer"
+          ><LuChevronDown className="size-30" /></button>
+        </div>
+      )}
+    </div>
   )
 }

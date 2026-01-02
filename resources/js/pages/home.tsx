@@ -2,6 +2,7 @@ import { Head, Link } from "@inertiajs/react"
 import Layouts from "@/components/layouts"
 import { FaInstagram, FaTiktok } from "react-icons/fa6"
 import { LuChevronRight } from "react-icons/lu"
+import { backInOut, motion } from "framer-motion"
 
 export default function Home() {
   return (
@@ -17,16 +18,60 @@ export default function Home() {
           alt="bg-home"
           className="-z-50 absolute -top-0.5 left-0 w-full"
         />
-        <div
+        <motion.div
+          initial="initial"
+          whileInView="whileInView"
+          transition={{
+            ease: "backInOut"
+          }}
           className="w-180 h-100 flex flex-col justify-around text-6xl uppercase"
         >
-          <h1
+          <motion.h1
+            variants={{
+              initial: {
+                opacity: 0,
+                y: -20
+              },
+              whileInView: {
+                opacity: 1,
+                y: 0
+              }
+            }}
+            transition={{
+              delay: 0.6
+            }}
             className="font-serif font-light"
-          >Periklanan <div className="font-sans font-black">Melalui Digital</div></h1>
-          <h1
+          >Periklanan <div className="font-sans font-black">Melalui Digital</div></motion.h1>
+          <motion.h1
+            variants={{
+              initial: {
+                opacity: 0,
+                y: -20
+              },
+              whileInView: {
+                opacity: 1,
+                y: 0
+              }
+            }}
+            transition={{
+              delay: 0.9
+            }}
             className="italic"
-          >Pengelolaan akun media sosial</h1>
-          <span
+          >Pengelolaan akun media sosial</motion.h1>
+          <motion.span
+            variants={{
+              initial: {
+                opacity: 0,
+                y: -20
+              },
+              whileInView: {
+                opacity: 1,
+                y: 0
+              }
+            }}
+            transition={{
+              delay: 1.2
+            }}
             className="flex items-center"
           >
             <Link
@@ -34,8 +79,8 @@ export default function Home() {
               className="px-6 py-2 text-base text-bg hover:text-bg bg-fg hover:bg-transparent border-2 border-fg rounded-full transition-all duration-500"
             >Tentang Kami</Link>
             <LuChevronRight className="size-10" />
-          </span>
-        </div>
+          </motion.span>
+        </motion.div>
       </section>
 
       <section
@@ -45,21 +90,65 @@ export default function Home() {
         <div
           className="w-[90%] h-full mx-auto flex flex-col justify-center items-center"
         >
-          <h1
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: -20
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "backInOut"
+            }}
             className="text-3xl text-bg uppercase"
-          >Tentang <span className="font-bold">Kami</span></h1>
-          <div
+          >Tentang <span className="font-bold">Kami</span></motion.h1>
+          <motion.div
+            initial="initial"
+            whileInView="whileInView"
             className="mt-30 flex gap-8"
           >
-            <img
+            <motion.img
+              variants={{
+                initial: {
+                  opacity: 0,
+                  x: -20
+                },
+                whileInView: {
+                  opacity: 1,
+                  x: 0
+                }
+              }}
+              transition={{
+                delay: 0.3,
+                duration: 0.7,
+                ease: "backInOut"
+              }}
               src="assets/images/about/profile.jpg"
               alt="profile"
               className="w-70 rounded-2xl"
             />
-            <p
+            <motion.p
+              variants={{
+                initial: {
+                  opacity: 0,
+                  x: 20
+                },
+                whileInView: {
+                  opacity: 1,
+                  x: 0
+                }
+              }}
+              transition={{
+                delay: 0.3,
+                duration: 0.7,
+                ease: "backInOut"
+              }}
               className="px-20 flex justify-center items-center text-bg text-shadow-sm text-shadow-bg/40 text-justify font-semibold bg-[#D9D9D9] uppercase border-2 border-bg rounded-2xl"
-            >Growdience Creative adalah mitra strategis Anda dalam membangun dan memperluas audiens brand secara kreatif dan terukur. Kami percaya bahwa iklan yang efektif bukan hanya tentang menjangkau banyak orang, tetapi tentang menumbuhkan komunitas yang setia ("Growing an Audience").</p>
-          </div>
+            >Growdience Creative adalah mitra strategis Anda dalam membangun dan memperluas audiens brand secara kreatif dan terukur. Kami percaya bahwa iklan yang efektif bukan hanya tentang menjangkau banyak orang, tetapi tentang menumbuhkan komunitas yang setia ("Growing an Audience").</motion.p>
+          </motion.div>
         </div>
       </section>
 
@@ -70,41 +159,91 @@ export default function Home() {
         <div
           className="w-[90%] h-full mx-auto flex flex-col justify-center items-center"
         >
-          <h1
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: -20
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "backInOut"
+            }}
             className="text-3xl text-bg uppercase"
-          >Layanan Yang Kami <span className="font-bold">Tawarkan</span></h1>
-          <div
+          >Layanan Yang Kami <span className="font-bold">Tawarkan</span></motion.h1>
+          <motion.div
+            initial="initial"
+            whileInView="whileInView"
             className="mt-20 w-full flex justify-evenly items-center"
           >
-            <Link
-              href="/endors"
-              className="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-bg rounded-3xl"
+            <motion.div
+              variants={{
+                initial: {
+                  opacity: 0,
+                  x: -20
+                },
+                whileInView: {
+                  opacity: 1,
+                  x: 0
+                }
+              }}
+              transition={{
+                delay: 0.3,
+                duration: 0.7,
+                ease: "backInOut"
+              }}
             >
-              <h1
-                className="mt-4 text-2xl font-bold"
-              >Endorsement</h1>
-              <img
-                src="assets/images/endors/service.png"
-                alt="endorsement"
-                className="w-40"
-              />
-            </Link>
-            <Link
-              href="/services"
-              className="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-bg rounded-3xl"
-            >
-              <h1
-                className="mt-4 text-2xl text-center font-bold"
-              >Social Media Management</h1>
-              <div
-                className="relative mt-6 px-4 grid grid-cols-3 grid-rows-3"
+              <Link
+                href="/endors"
+                className="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-bg rounded-3xl"
               >
-                <hr className="absolute -bottom-8 w-87 h-1 -rotate-45 origin-left bg-fg" />
-                <FaInstagram className="col-start-1 col-span-1 size-19" />
-                <FaTiktok className="col-start-3 col-span-1 row-start-3 size-19" />
-              </div>
-            </Link>
-          </div>
+                <h1
+                  className="mt-4 text-2xl font-bold"
+                >Endorsement</h1>
+                <img
+                  src="assets/images/endors/service.png"
+                  alt="endorsement"
+                  className="w-40"
+                />
+              </Link>
+            </motion.div>
+            <motion.div
+              variants={{
+                initial: {
+                  opacity: 0,
+                  x: 20
+                },
+                whileInView: {
+                  opacity: 1,
+                  x: 0
+                }
+              }}
+              transition={{
+                delay: 0.3,
+                duration: 0.7,
+                ease: "backInOut"
+              }}
+            >
+              <Link
+                href="/services"
+                className="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-bg rounded-3xl"
+              >
+                <h1
+                  className="mt-4 text-2xl text-center font-bold"
+                >Social Media Management</h1>
+                <div
+                  className="relative mt-6 px-4 grid grid-cols-3 grid-rows-3"
+                >
+                  <hr className="absolute -bottom-8 w-87 h-1 -rotate-45 origin-left bg-fg" />
+                  <FaInstagram className="col-start-1 col-span-1 size-19" />
+                  <FaTiktok className="col-start-3 col-span-1 row-start-3 size-19" />
+                </div>
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -115,13 +254,42 @@ export default function Home() {
         <div
           className="w-[80%] mx-auto pt-20 pb-30 flex flex-col jus items-center"
         >
-          <h1
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: -20
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0
+            }}
+            transition={{
+              duration: 0.5,
+              ease: "backInOut"
+            }}
             className="text-3xl text-bg uppercase"
-          >Cara Kita <span className="font-bold">Bekerja</span></h1>
-          <div
+          >Cara Kita <span className="font-bold">Bekerja</span></motion.h1>
+          <motion.div
+            initial="initial"
+            whileInView="whileInView"
             className="w-full h-full mt-10 grid grid-cols-5 grid-rows-4 gap-y-8"
           >
-            <div
+            <motion.div
+              variants={{
+                initial: {
+                  opacity: 0,
+                  x: -20
+                },
+                whileInView: {
+                  opacity: 1,
+                  x: 0
+                }
+              }}
+              transition={{
+                delay: 0.3,
+                duration: 0.7,
+                ease: "backInOut"
+              }}
               className="col-span-3"
             >
               <h1
@@ -130,8 +298,23 @@ export default function Home() {
               <p
                 className="px-2 py-4 text-lg font-semibold bg-linear-to-br from-stone-400 to-bg border border-bg rounded-2xl"
               >Anda mengisi form singkat untuk menjelaskan kebutuhan, tujuan bisnis, dan target audiens. Dari sini, kami menyusun gambaran awal strategi yang paling sesuai.</p>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              variants={{
+                initial: {
+                  opacity: 0,
+                  x: 20
+                },
+                whileInView: {
+                  opacity: 1,
+                  x: 0
+                }
+              }}
+              transition={{
+                delay: 0.6,
+                duration: 0.7,
+                ease: "backInOut"
+              }}
               className="col-start-3 col-span-3"
             >
               <h1
@@ -140,8 +323,23 @@ export default function Home() {
               <p
                 className="px-2 py-4 text-lg font-semibold bg-linear-to-br from-stone-400 to-bg border border-bg rounded-2xl"
               >Kami memilih konsep konten dan kreator yang relevan dengan brand Anda. Draft konten disiapkan dan diajukan untuk persetujuan sebelum produksi dimulai.</p>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              variants={{
+                initial: {
+                  opacity: 0,
+                  x: -20
+                },
+                whileInView: {
+                  opacity: 1,
+                  x: 0
+                }
+              }}
+              transition={{
+                delay: 0.9,
+                duration: 0.7,
+                ease: "backInOut"
+              }}
               className="col-span-3"
             >
               <h1
@@ -150,8 +348,23 @@ export default function Home() {
               <p
                 className="px-2 py-4 text-lg font-semibold bg-linear-to-br from-stone-400 to-bg border border-bg rounded-2xl"
               >Performa konten dianalisis untuk melihat dampak dan peluang pengembangan. Hasil evaluasi digunakan sebagai dasar optimasi ke depannya.</p>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              variants={{
+                initial: {
+                  opacity: 0,
+                  x: 20
+                },
+                whileInView: {
+                  opacity: 1,
+                  x: 0
+                }
+              }}
+              transition={{
+                delay: 1.2,
+                duration: 0.7,
+                ease: "backInOut"
+              }}
               className="col-start-3 col-span-3"
             >
               <h1
@@ -160,8 +373,8 @@ export default function Home() {
               <p
                 className="px-2 py-4 text-lg font-semibold bg-linear-to-br from-stone-400 to-bg border border-bg rounded-2xl"
               >Konten diproduksi dan dipublikasikan sesuai jadwal yang telah disepakati. Setiap proses dijalankan secara bertahap dan terkontrol.</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </Layouts>

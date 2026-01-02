@@ -2,10 +2,21 @@ import { useState } from "react"
 import { LuChevronRight } from "react-icons/lu"
 import { FaLinkedin, FaSquareInstagram, FaTiktok } from "react-icons/fa6"
 import { Link } from "@inertiajs/react"
+import { motion } from "framer-motion"
 
 export default function Headers() {
   return (
-    <header
+    <motion.header
+      initial={{
+        y: -80
+      }}
+      animate={{
+        y: 0
+      }}
+      transition={{
+        duration: 1,
+        ease: "backInOut"
+      }}
       className="z-50 absolute w-full h-20 px-20 flex justify-between items-center"
     >
       <h1
@@ -19,7 +30,7 @@ export default function Headers() {
         <FaTiktok size={25} />
         <FaLinkedin size={30} />
       </div>
-    </header>
+    </motion.header>
   )
 }
 
