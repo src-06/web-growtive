@@ -3,20 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Inertia\Response;
 
 class AdminController extends Controller
 {
-  public function index() {
-    return inertia('admin/panel', [
-      'users' => User::all(),
+  public function index(): Response
+  {
+    return inertia("admin/panel", [
+      "users" => User::all(),
     ]);
   }
 
-  public function paket() {
-    return inertia('admin/panel');
+  public function paket(): Response
+  {
+    return inertia("admin/panel");
   }
 
-  public function profile() {
-    return inertia('admin/profile');
+  public function profile(): Response
+  {
+    return inertia("admin/profile");
   }
 }

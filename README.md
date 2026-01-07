@@ -5,8 +5,6 @@ Website periklanan digital untuk tugas project kuliah.
 
 [Arch Linux](#package-yang-diperlukan-untuk-arch-linux-based)
 
-[NixOS](#package-yang-diperlukan-untuk-nixos-based)
-
 [Debian/Ubuntu](#package-yang-diperlukan-untuk-debianubuntu-based)
 
 [Fedora](#package-yang-diperlukan-untuk-fedora-based)
@@ -15,28 +13,12 @@ Website periklanan digital untuk tugas project kuliah.
 
 ### Setup
 [Langkah-langkah setup](#langkah-langkah-setup)
+[Langkah-langkah setup `nix` + `flake`](#langkah-langkah-setup-nix--flakes)
 
 #### Package yang diperlukan untuk Arch Linux based!
 ```bash
 sudo pacman -S git php composer nodejs npm
 ```
-
-#### Package yang diperlukan untuk NixOS based!
-1. Edit file `/etc/nixos/configuration.nix` lalu tambahkan packages pada baris ini
-	```nix
-	environment.systemPackages = with pkgs; [
-		...
-		git
-		php82
-		php82Packages.composer
-		nodePackages.nodejs
-		...
-	];
-	```
-2. Rebuild nixos
-	```bash
-	sudo nixos-rebuild switch
-	```
 
 #### Package yang diperlukan untuk Debian/Ubuntu based!
 ```bash
@@ -71,3 +53,27 @@ choco install git php composer nodejs
 	```
 
 4. Buka browser dan ketik [`localhost:8000`](http://localhost:8000)
+
+### Langkah-langkah setup `nix` + `flakes`
+1. Clone repository dan masuk ke folder web-growtive
+	```bash
+	git clone https://github.com/src-06/web-growtive.git
+	cd web-growtive
+	```
+
+2. Jalankan nix development
+	```bash
+	nix develop
+	```
+
+3. Install package dependencies and setup `.env`
+	```bash
+	composer setup
+	```
+
+4. Tinggal running di local
+	```bash
+	composer dev
+	```
+
+5. Buka browser dan ketik [`localhost:8000`](http://localhost:8000)

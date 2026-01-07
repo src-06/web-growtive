@@ -22,6 +22,10 @@ export default function Login() {
         className="px-20 py-15 flex flex-col gap-4  bg-linear-to-tl from-black to-bg to-90% rounded-2xl shadow-2xl shadow-bg [&>div]:flex [&>div]:flex-col"
       >
         <div>
+          <p>{errors.email}</p>
+          <p>{errors.password}</p>
+        </div>
+        <div>
           <label
             htmlFor="email"
           >Email</label>

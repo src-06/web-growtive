@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Response;
+
 class HomeController extends Controller
 {
-  public function index() {
-    return inertia('home');
+  public function index(): Response
+  {
+    return inertia("home");
   }
 }

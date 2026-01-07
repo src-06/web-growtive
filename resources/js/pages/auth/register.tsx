@@ -23,6 +23,9 @@ export default function Register() {
         className="px-20 py-15 flex flex-col gap-4  bg-linear-to-tl from-black to-bg to-90% rounded-2xl shadow-2xl shadow-bg [&>div]:flex [&>div]:flex-col"
       >
         <div>
+          <p>{errors.email}</p>
+        </div>
+        <div>
           <label
             htmlFor="name"
           >Name</label>
@@ -54,11 +57,6 @@ export default function Register() {
             type="text"
             id="password"
             placeholder="Your password..."
-          />
-          <input
-            type="text"
-            id="retypePassword"
-            placeholder="Retype your password..."
             value={data.password}
             onChange={e => setData('password', e.target.value)}
           />

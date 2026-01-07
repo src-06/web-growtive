@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Response;
+
 class ServicesController extends Controller
 {
-  public function index() {
-    return inertia('services');
+  public function index(): Response
+  {
+    return inertia("services");
   }
 }
