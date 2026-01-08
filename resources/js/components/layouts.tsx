@@ -33,7 +33,7 @@ export default function Layouts({ children }: { children?: React.ReactNode }) {
       <div
         id="to-top"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="opacity-0 fixed bottom-10 right-6 size-14 flex justify-center items-center text-white bg-bg hover:bg-[#525252] rounded-full transition-all duration-400 cursor-pointer hover:[&>div]:-translate-y-2"
+        className="z-50 opacity-0 fixed bottom-10 right-6 size-14 flex justify-center items-center text-white bg-bg hover:bg-[#525252] rounded-full transition-all duration-400 cursor-pointer hover:[&>div]:-translate-y-2"
       >
         <div
           className="transition-transform duration-500"
@@ -41,9 +41,9 @@ export default function Layouts({ children }: { children?: React.ReactNode }) {
       </div>
       <a
         id="contact-wa"
-        href="https://wa.me/6281224510817"
+        href="https://web.whatsapp.com/send/?phone=6281224510817&text&type=phone_number&app_absent=0"
         target="_blank"
-        className="opacity-0 fixed bottom-28 right-6 size-14"
+        className="z-50 opacity-0 fixed bottom-28 right-6 size-14"
       >
         <img
           src="assets/images/wa.svg"

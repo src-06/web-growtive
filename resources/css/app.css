@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+  src: url('/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
 }
 
 @theme {
@@ -29,5 +29,9 @@ a:hover {
 }
 
 button {
-  @apply cursor-pointer;
+  @apply cursor-pointer disabled:cursor-not-allowed;
+}
+
+input {
+  @apply px-2 py-1 outline-0 border-b-2 border-fg/80;
 }

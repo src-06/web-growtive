@@ -1,5 +1,5 @@
 
-export function Card2({ id, children }: { id: string; children: React.ReactNode }) {
+export function Card2({ id, children, count }: { id: string; children: React.ReactNode; count: number }) {
   return (
     <div
       id={`${id}`}
@@ -15,8 +15,8 @@ export function Card2({ id, children }: { id: string; children: React.ReactNode 
             className="w-full flex items-center gap-2"
           >
             <img
-              src="assets/images/services-tt.svg"
-              alt="services-tt"
+              src="assets/images/services/tt.svg"
+              alt="tt"
               className="w-15"
             />
             <h1>Tiktok</h1>
@@ -26,8 +26,8 @@ export function Card2({ id, children }: { id: string; children: React.ReactNode 
             className="w-full flex items-center gap-2"
           >
             <img
-              src="assets/images/services-ig.svg"
-              alt="services-ig"
+              src="assets/images/services/ig.svg"
+              alt="ig"
               className="w-15"
             />
             <h1>Instagram</h1>
@@ -40,7 +40,7 @@ export function Card2({ id, children }: { id: string; children: React.ReactNode 
         className="ml-4 col-span-3"
       >
         <div
-          className={`grid grid-cols-6 gap-75 text-fg overflow-x-auto`}
+          className={`grid grid-cols-${count} gap-13 text-fg overflow-x-auto`}
         >{children}</div>
       </div>
     </div>
