@@ -90,8 +90,7 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
-        },
-        "cache-dir": "/home/indy4565/public_html/web-growtive/cache"
+        }
     },
     "minimum-stability": "stable",
     "prefer-stable": true
