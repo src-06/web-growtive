@@ -2,21 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Charts;
 use Inertia\Response;
 
 class AdminController extends Controller
 {
   public function index(): Response
   {
-    return inertia("admin/panel", [
-      "users" => User::all(),
+    return inertia("admin/dashboard", [
+      'charts' => Charts::all(),
     ]);
-  }
-
-  public function paket(): Response
-  {
-    return inertia("admin/panel");
   }
 
   public function profile(): Response

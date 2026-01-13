@@ -53,7 +53,7 @@ class UserController extends Controller
 
     if (Auth::attempt($credentials)) {
       $request->session()->regenerate();
-      return redirect()->intended("/admin/users");
+      return redirect()->intended("/admin");
     }
 
     return back()->withErrors([
@@ -74,22 +74,17 @@ class UserController extends Controller
       "name" => ["sometimes", "required", "string", "max:255"],
       "email" => ["sometimes", "required", "string", "email", "max:255", "unique:users,email," . $user->id],
       "password" => ["sometimes", "required", "string", "min:8"],
-      "role" => ["sometimes", "required", "in:system,admin,user"],
+      "role" => ["sometimes", "required", "in:owner,admin,user"],
     ]);
 
     foreach ($validated as $key => $value) {
-      if ($key == "password") {
+      if ($key == "password")
         $user->password = bcrypt($value);
-      } elseif ($key == "role") {
-        if (in_array($auth->role, ["system", "admin"])) {
-          if ($auth->role === "admin" && $user->role === "system") {
-            continue;
-          } else {
-            $user->role = $value;
-          }
-        } else {
-          $user->$key = $value;
-        }
+      elseif ($key == "role") {
+        if (in_array($auth->role, ["owner", "admin"])) {
+          if ($auth->role === "admin" && $user->role === "owner") continue;
+          else $user->role = $value;
+        } else $user->$key = $value;
       }
     }
 

@@ -11,7 +11,7 @@ export default function UserPage({ users }: { users: Users }) {
     if (confirm(`Mau hapus ${name}?`))
       router.delete(route('users.destroy', id))
   }, auth = usePage().props.auth,
-  canEdit = (user: User) => user.role === 'system' || user.role === auth.user?.role || auth.user?.role === 'user'
+  canEdit = (user: User) => user.role === 'owner' || user.role === auth.user?.role || auth.user?.role === 'user'
 
   return (
     <Layouts

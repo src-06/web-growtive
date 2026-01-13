@@ -6,13 +6,6 @@ export interface Users {
   last_page: number
 }
 
-export interface Link {
-  active: boolean
-  label: string
-  page: number
-  url: string
-}
-
 export interface User {
   id: number
   name: string
@@ -21,4 +14,18 @@ export interface User {
   email_verified_at: string | null
   created_at: string
   updated_at: string
+}
+
+export interface Link {
+  active: boolean
+  label: string
+  page: number
+  url: string
+}
+
+export interface Charts {
+  instagram: number
+  tiktok: number
+  ig_and_tt: number
+  created_at: string
 }

@@ -15,8 +15,7 @@ Route::get('/about', [AboutController::class, 'index']);
 Route::get('/services', [ServicesController::class, 'index']);
 Route::get('/endors', [EndorsController::class, 'index']);
 
-Route::get('/register', [UserController::class, 'create'])
-->middleware('role:user');
+Route::get('/register', [UserController::class, 'create']);
 Route::get('/login', [UserController::class, 'login']);
 
 Route::middleware(['role:user'])
