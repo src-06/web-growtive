@@ -9,4 +9,10 @@ class Charts extends Model
 {
     /** @use HasFactory<\Database\Factories\ChartsFactory> */
     use HasFactory;
+
+    protected $fillable = [
+      'instagram',
+      'tiktok',
+      'ig_and_tt',
+    ];
 }
