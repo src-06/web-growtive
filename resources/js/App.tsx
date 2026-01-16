@@ -1,6 +1,6 @@
 import { createInertiaApp } from "@inertiajs/react"
 import { createRoot } from "react-dom/client"
-import "../css/app.css"
+import "~/css/app.css"
 
 const APP_NAME = import.meta.env.VITE_APP_NAME || 'Laravel'
 

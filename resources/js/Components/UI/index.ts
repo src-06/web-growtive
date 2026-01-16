@@ -1,1 +1,1 @@
-export * from "./Sections/GradBG"
+export * from "./Sections";

@@ -12,16 +12,16 @@ const Headers = () => {
         className="flex gap-4"
       >
         <button
-          className="btn-nav"
+          className="nav-btn"
         >Beranda</button>
         <button
-          className="btn-nav"
+          className="nav-btn"
         >Layanan</button>
         <button
-          className="btn-nav"
+          className="nav-btn"
         >Tentang Kami</button>
         <button
-          className="btn-nav"
+          className="nav-btn"
         >Kontak Kami</button>
       </nav>
       <div
