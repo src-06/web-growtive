@@ -1,5 +1,5 @@
 import { ComponentProps } from "react"
-import { cn } from "~/js/Lib/util"
+import { cn } from "@/Lib/util"
 
 const SectionGradBG = ({ children, className }: ComponentProps<"section">) => {
   return (
@@ -7,7 +7,7 @@ const SectionGradBG = ({ children, className }: ComponentProps<"section">) => {
       className={cn(["w-full h-screen text-background bg-linear-to-br from-[#888] to-white", className])}
     >
       <div
-        className="w-[90%] h-fit mx-auto"
+        className="w-[90%] h-full mx-auto"
       >
         {children}
       </div>

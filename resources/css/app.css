@@ -22,7 +22,7 @@
 @layer base {
   /* Begin: Default styles */
   html, body {
-    @apply text-foreground antialiased;
+    @apply text-foreground antialiased select-none;
   }
   /* End: Default styles */
 

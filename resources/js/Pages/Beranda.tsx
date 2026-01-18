@@ -29,7 +29,7 @@ const Steps: StepsProps[] = [
   },
 ]
 
-export default function HomePages() {
+const HalamanBeranda = () => {
   return (
     <LayoutPages>
       <section
@@ -54,14 +54,16 @@ export default function HomePages() {
           <p
             className="italic"
           >Pengelolaan akun media sosial</p>
-          <button
-            className="w-fit flex items-center gap-2 hover:[&>svg]:text-background"
+          <Link
+            as="button"
+            href="/TentangKami"
+            className="w-fit flex items-center gap-2 hover:[&>span]:text-foreground hover:[&>span]:bg-transparent hover:[&>svg]:translate-x-4"
           >
             <span
-              className="w-fit px-6 py-2 text-base text-background uppercase bg-foreground rounded-full"
+              className="w-fit px-6 py-2 text-base text-background uppercase bg-foreground border-2 border-foreground rounded-full transition-all"
             >Tentang Kami</span>
-            <FaChevronRight size={26} />
-          </button>
+            <FaChevronRight size={26} className="transition-all" />
+          </Link>
         </div>
       </section>
 
@@ -173,3 +175,5 @@ export default function HomePages() {
     </LayoutPages>
   )
 }
+
+export default HalamanBeranda
