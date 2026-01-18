@@ -110,7 +110,8 @@ const HalamanBeranda = () => {
           >
             <div>
               <Link
-                href="/endors"
+                as="button"
+                href="/Endorsement"
                 className="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-background rounded-3xl"
               >
                 <h1
@@ -125,7 +126,8 @@ const HalamanBeranda = () => {
             </div>
             <div>
               <Link
-                href="/services"
+                as="button"
+                href="/PengelolaanAkunMedsos"
                 className="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-background rounded-3xl"
               >
                 <h1
