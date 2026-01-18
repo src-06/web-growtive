@@ -1,37 +1,42 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@source '../views';
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source "../views";
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+  src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
 
 @theme {
+  /* Begin: Fonts */
   --font-sans: 'Montserrat', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  /* End: Fonts */
 
-  --color-bg: #212121;
-  --color-fg: #dadada;
+  /* Begin: Colos */
+  --color-background: #212121;
+  --color-foreground: #dadada;
+  /* End: Colos */
 }
 
-html,
-body {
-  @apply relative min-w-full min-h-full text-fg border-fg outline-fg scroll-smooth select-none;
+@layer base {
+  /* Begin: Default styles */
+  html, body {
+    @apply text-foreground antialiased select-none;
+  }
+  /* End: Default styles */
+
+  /* Begin: Buttons */
+  button {
+    @apply cursor-pointer;
+  }
+  /* End: Buttons */
 }
 
-a {
-  @apply transition-all duration-300;
-}
-
-a:hover {
-  @apply text-fg/80;
-}
-
-button {
-  @apply cursor-pointer disabled:cursor-not-allowed;
-}
-
-input {
-  @apply px-2 py-1 outline-0 border-b-2 border-fg/80;
+@layer utilities {
+  /* Begin: Button Navigations */
+  .nav-btn {
+    @apply px-3 py-1 hover:bg-background/30 rounded-md;
+  }
+  /* End: Button Navigations */
 }
