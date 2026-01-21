@@ -1,37 +1,34 @@
 <?php
 
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\EndorsController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/about', [AboutController::class, 'index']);
-Route::get('/services', [ServicesController::class, 'index']);
-Route::get('/endors', [EndorsController::class, 'index']);
+Route::inertia('/', 'Beranda');
+Route::inertia('/TentangKami', 'TentangKami');
+Route::inertia('/Endorsement', 'Endorsement');
+Route::inertia('/PengelolaanAkunMedsos', 'PengelolaanAkunMedsos');
 
-Route::get('/register', [UserController::class, 'create']);
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/Admin/Login', [UserController::class, 'login']);
+Route::get('/Admin/Register', [UserController::class, 'create']);
 
-Route::middleware(['role:user'])
-->prefix('admin')->group(function () {
-  Route::get('/', [AdminController::class, 'index']);
-  Route::get('/profile', [AdminController::class, 'profile']);
-  Route::get('/users', [UserController::class, 'index']);
+Route::middleware('auth')
+->prefix('Admin')
+->group(function () {
+  Route::get('/', [ChartController::class, 'index']);
+  Route::get('/Chart', function () { return redirect('/Admin'); });
+  Route::middleware('check:admin,editor')
+  ->get('/Chart/Tambah', [ChartController::class, 'create']);
+  Route::middleware('check:admin')
+  ->get('/Users', [UserController::class, 'index']);
 });
 
-Route::resource('users', UserController::class)
+Route::resource('/users', UserController::class)
 ->except(['index', 'create']);
-Route::post('/login', [UserController::class, 'auth'])
+Route::post('/users/auth', [UserController::class, 'auth'])
 ->name('users.login');
-Route::post('/logout', function (Request $request) {
-  Auth::logout();
-  $request->session()->invalidate();
-  $request->session()->regenerateToken();
-  return redirect('/login');
-})->name('users.logout');
+Route::post('/users/logout', [UserController::class, 'logout'])
+->name('users.logout');
+
+Route::resource('/charts', ChartController::class)
+->except(['index', 'create']);

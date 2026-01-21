@@ -1,18 +1,18 @@
 {
-  description = "Dev Shell";
+  description = "devShell";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }:
+  outputs = { nixpkgs, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
   in
   {
     devShell.${system} = pkgs.mkShell {
-      name = "Laravel 12";
+      name = "PHP82_and_NodeJS_LTS";
       buildInputs = with pkgs; [
         php82
         php82Packages.composer
