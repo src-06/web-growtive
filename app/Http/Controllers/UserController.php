@@ -78,7 +78,7 @@ class UserController extends Controller
       "name" => ["sometimes", "required", "string", "max:255"],
       "email" => ["sometimes", "required", "string", "email", "max:255", "unique:users,email," . $user->id],
       "password" => ["sometimes", "required", "string", "min:8"],
-      "role" => ["sometimes", "required", "in:admin,owner,user"],
+      "role" => ["sometimes", "required", "in:admin,editor,user"],
     ]);
 
     foreach ($validated as $key => $value) {
@@ -86,7 +86,7 @@ class UserController extends Controller
         $user->password = bcrypt($value);
       elseif ($key == "role") {
         if (in_array($auth->role, ["admin"])) {
-          if ($auth->role === "admin") continue;
+          if ($auth->role !== "admin") continue;
           else $user->role = $value;
         } else $user->$key = $value;
       }

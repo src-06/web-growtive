@@ -1,6 +1,10 @@
 import { motion } from "framer-motion"
 import { useEffect } from "react"
 import { LuChevronDown } from "react-icons/lu"
+import imgKonsultasi from "~/images/endors/konsultasi.png"
+import imgNegosiasi from "~/images/endors/negosiasi.png"
+import imgPengerjaan from "~/images/endors/pengerjaan.png"
+import imgPublish from "~/images/endors/publish.png"
 
 interface ProcessProps {
   title: string
@@ -11,22 +15,22 @@ interface ProcessProps {
 const process: ProcessProps[] = [
   {
     title: "Konsultasi",
-    img: "konsultasi.png",
+    img: imgKonsultasi,
     detail: "Konsultasi adalah proseskomunikasi atau pertemuan antara dua pihak atau lebih untuk mendiskusikan, berbagi informasi, dan mencapai keputusan atau solusi terkait suatu masalah atau topik tertentu. Dalam konteks lain, konsultasi juga dapat diartikan sebagai pertukaran pikiran untuk mendapatkan kesimpulan, seperti nasihat atau saran.",
   },
   {
     title: "Negosiasi Kebutuhan",
-    img: "negosiasi.png",
+    img: imgNegosiasi,
     detail: "Konsultasi adalah proseskomunikasi atau pertemuan antara dua pihak atau lebih untuk mendiskusikan, berbagi informasi, dan mencapai keputusan atau solusi terkait suatu masalah atau topik tertentu. Dalam konteks lain, konsultasi juga dapat diartikan sebagai pertukaran pikiran untuk mendapatkan kesimpulan, seperti nasihat atau saran.",
   },
   {
     title: "Pengerjaan & Revisi",
-    img: "pengerjaan.png",
+    img: imgPengerjaan,
     detail: "Konsultasi adalah proseskomunikasi atau pertemuan antara dua pihak atau lebih untuk mendiskusikan, berbagi informasi, dan mencapai keputusan atau solusi terkait suatu masalah atau topik tertentu. Dalam konteks lain, konsultasi juga dapat diartikan sebagai pertukaran pikiran untuk mendapatkan kesimpulan, seperti nasihat atau saran.",
   },
   {
     title: "Publish",
-    img: "publish.png",
+    img: imgPublish,
     detail: "Konsultasi adalah proseskomunikasi atau pertemuan antara dua pihak atau lebih untuk mendiskusikan, berbagi informasi, dan mencapai keputusan atau solusi terkait suatu masalah atau topik tertentu. Dalam konteks lain, konsultasi juga dapat diartikan sebagai pertukaran pikiran untuk mendapatkan kesimpulan, seperti nasihat atau saran.",
   },
 ]
@@ -77,14 +81,14 @@ export function ApplicationProcess() {
             x: 0
           }}
           transition={{
-            delay: 0.1,
-            duration: 0.8,
+            delay: 0.2,
+            duration: 1,
             ease: "backInOut"
           }}
-          className="relative h-fit p-6 flex flex-col justify-between items-center gap-4 bg-[#D9D9D9] rounded-3xl shadow-xl shadow-bg/30"
+          className="relative h-fit p-6 flex flex-col justify-between items-center gap-4 bg-[#D9D9D9] rounded-3xl shadow-xl shadow-background/30"
         >
-          <h1 className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 flex justify-center items-center text-4xl text-fg font-bold bg-linear-to-b from-bg to-[#9e9e9e] rounded-full p-4">{index+1}</h1>
-          <img src={`/assets/images/endors/${data.img}`} alt={data.title} />
+          <h1 className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 flex justify-center items-center text-4xl text-foreground font-bold bg-linear-to-b from-background to-[#9e9e9e] rounded-full p-4">{index+1}</h1>
+          <img src={data.img} alt={data.title} />
           <h2
             className="h-20 text-3xl text-center font-semibold"
           >{data.title}</h2>

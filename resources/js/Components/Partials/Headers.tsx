@@ -1,24 +1,50 @@
 import { Link, usePage } from "@inertiajs/react"
+import { motion } from "framer-motion"
 import { useState } from "react"
-import { FaChevronDown, FaInstagram, FaLinkedinIn, FaTiktok } from "react-icons/fa6"
+import { FaChevronDown, FaInstagram, FaTiktok } from "react-icons/fa6"
+import logo from "~/images/logo.png"
 
 const Headers = () => {
   return (
-    <header
+    <motion.header
+      initial={{
+        opacity: 0,
+        y: -30,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        delay: 0.2,
+        duration: 0.7,
+        ease: 'backInOut',
+      }}
       className="z-50 absolute top-0 w-full h-18 px-14 flex justify-between items-center"
     >
-      <h1
-        className="text-3xl font-bold"
-      >Growdience</h1>
+      <div
+        className="flex items-center"
+      >
+        <img
+          src={logo}
+          alt="Logo Growdience Creative"
+          className="size-12 drop-shadow-[0_0_2px] drop-shadow-white rounded-full"
+        />
+      </div>
       <NavBtn />
       <div
         className="flex gap-4"
       >
-        <FaInstagram size={30} />
-        <FaTiktok size={30} />
-        <FaLinkedinIn size={30} />
+        <Link
+          as="button"
+          onClick={() => window.open('https://www.instagram.com/growdience.creative?igsh=MXhwMDdqeTNsd2tkeA%3D%3D&utm_source=qr', '_blank')}
+        ><FaInstagram size={30} /></Link>
+        <Link
+          as="button"
+          onClick={() => window.open('https://www.tiktok.com/@growdience.creati?_r=1&_t=ZS-93GHT8LJgnN', '_blank')}
+        ><FaTiktok size={30} /></Link>
       </div>
-    </header>
+    </motion.header>
   )
 }
 
@@ -72,7 +98,7 @@ const NavBtn = ({ orientation = 'vertical' }: { orientation?: 'vertical' | 'hori
       )}
       <Link
         as="button"
-        onClick={() => window.open('https://google.com/', '_blank')}
+        onClick={() => window.open('https://wa.wizard.id/ac9290', '_blank')}
         className="nav-btn"
       >Kontak Kami</Link>
     </nav>

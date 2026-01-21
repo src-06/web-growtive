@@ -1,9 +1,10 @@
 import { LayoutPages, SectionGradBG } from "@/Components"
 import { FaChevronRight, FaInstagram, FaTiktok } from "react-icons/fa6"
-import { Link } from "@inertiajs/react"
+import { Head, Link } from "@inertiajs/react"
 import bgHome from "~/images/bg/home.svg"
 import imgProfile from "~/images/about/profile.jpg"
 import imgServices from "~/images/endors/service.png"
+import { motion } from "framer-motion"
 
 interface StepsProps {
   title: string
@@ -32,6 +33,9 @@ const Steps: StepsProps[] = [
 const HalamanBeranda = () => {
   return (
     <LayoutPages>
+      <Head>
+      </Head>
+
       <section
         className="relative w-full h-dvh flex justify-center items-center"
       >
@@ -43,27 +47,69 @@ const HalamanBeranda = () => {
         <div
           className="w-170 h-full flex flex-col justify-center gap-6 text-6xl uppercase"
         >
-          <h1
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: -20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.4,
+              duration: 0.6,
+              ease: 'backInOut',
+            }}
             className="font-serif"
           >
             Periklanan<br />
             <span
               className="font-sans font-black"
             >Melalui Digital</span>
-          </h1>
-          <p
+          </motion.h1>
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: -20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.6,
+              duration: 0.6,
+              ease: 'backInOut',
+            }}
             className="italic"
-          >Pengelolaan akun media sosial</p>
-          <Link
-            as="button"
-            href="/TentangKami"
-            className="w-fit flex items-center gap-2 hover:[&>span]:text-foreground hover:[&>span]:bg-transparent hover:[&>svg]:translate-x-4"
+          >Pengelolaan akun media sosial</motion.p>
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: -20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.8,
+              duration: 0.6,
+              ease: 'backInOut',
+            }}
           >
-            <span
-              className="w-fit px-6 py-2 text-base text-background uppercase bg-foreground border-2 border-foreground rounded-full transition-all"
-            >Tentang Kami</span>
-            <FaChevronRight size={26} className="transition-all" />
-          </Link>
+            <Link
+              as="button"
+              href="/TentangKami"
+              className="w-fit flex items-center gap-2 hover:[&>span]:text-foreground hover:[&>span]:bg-transparent hover:[&>svg]:translate-x-4"
+            >
+              <span
+                className="w-fit px-6 py-2 text-base text-background uppercase bg-foreground border-2 border-foreground rounded-full transition-all"
+              >Tentang Kami</span>
+              <FaChevronRight size={26} className="transition-all" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -71,15 +117,39 @@ const HalamanBeranda = () => {
         <div
           className="h-full flex flex-col justify-center items-center gap-20"
         >
-          <h1
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: -20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: 'backInOut',
+            }}
             className="text-3xl uppercase"
           >
             Tentang
             <span
               className="font-bold"
             > Kami</span>
-          </h1>
-          <div
+          </motion.h1>
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: 'backInOut',
+            }}
             className="flex gap-8"
           >
             <img
@@ -94,7 +164,7 @@ const HalamanBeranda = () => {
                 className="w-[85%] h-fit text-justify font-bold uppercase"
               >Growdience Creative adalah mitra strategis Anda dalam membangun dan memperluas audiens brand secara kreatif dan terukur. Kami percaya bahwa iklan yang efektif bukan hanya tentang menjangkau banyak orang, tetapi tentang menumbuhkan komunitas yang setia ("Growing an Audience").</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </SectionGradBG>
 
@@ -102,13 +172,38 @@ const HalamanBeranda = () => {
         <div
           className="h-full flex flex-col justify-center items-center"
         >
-          <h1
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: -20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: 'backInOut',
+            }}
             className="text-3xl uppercase"
-          >Layanan Yang Kami <span className="font-bold">Tawarkan</span></h1>
+          >Layanan Yang Kami <span className="font-bold">Tawarkan</span></motion.h1>
           <div
             className="mt-20 w-full flex justify-evenly items-center text-foreground"
           >
-            <div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: -20,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              transition={{
+                duration: 0.6,
+                ease: 'backInOut',
+              }}
+            >
               <Link
                 as="button"
                 href="/Endorsement"
@@ -123,8 +218,21 @@ const HalamanBeranda = () => {
                   className="w-40"
                 />
               </Link>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              transition={{
+                duration: 0.6,
+                ease: 'backInOut',
+              }}
+            >
               <Link
                 as="button"
                 href="/PengelolaanAkunMedsos"
@@ -141,7 +249,7 @@ const HalamanBeranda = () => {
                   <FaTiktok className="col-start-3 col-span-1 row-start-3 size-19" />
                 </div>
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </SectionGradBG>
@@ -152,14 +260,39 @@ const HalamanBeranda = () => {
         <div
           className="w-full h-fit pt-20 pb-30 flex flex-col jus items-center"
         >
-          <h1
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: -20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: 'backInOut',
+            }}
             className="text-3xl text-background uppercase"
-          >Cara Kita <span className="font-bold">Bekerja</span></h1>
+          >Cara Kita <span className="font-bold">Bekerja</span></motion.h1>
           <div
             className="w-full h-fit mt-10 grid grid-cols-5 grid-rows-4 gap-y-12"
           >
             { Steps.map((value, index) =>
-              <div
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: -20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  delay: 0.2 * (index + 1),
+                  duration: 0.6,
+                  ease: 'backInOut',
+                }}
                 key={index}
                 className={index % 2 == 0 ? "col-span-3" : "col-span-3 col-start-3"}
               >
@@ -169,7 +302,7 @@ const HalamanBeranda = () => {
                 <p
                   className="px-2 py-4 text-lg text-foreground font-semibold bg-linear-to-br from-stone-400 to-background border border-background rounded-2xl"
                 >{value.description}</p>
-              </div>
+              </motion.div>
             )}
           </div>
         </div>

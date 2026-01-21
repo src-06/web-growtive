@@ -1,13 +1,11 @@
 import { Link, router, usePage } from "@inertiajs/react"
+import { FaUserCircle } from "react-icons/fa"
 import { route } from "ziggy-js"
 
-const LayoutAdmin = ({ children }: { children?: React.ReactNode }) => {
-  const { props, url } = usePage()
+const LayoutAdmin = ({ children, title }: { children?: React.ReactNode, title?: string }) => {
+  const { props } = usePage()
 
   const AuthUser = props.auth.user
-
-  let PageName = url.replace('/Admin', '')
-    PageName = PageName == '' ? 'Dashboard' : PageName.replace('/', '')
 
   return (
     <div className="w-full h-full flex overflow-hidden">
@@ -22,16 +20,18 @@ const LayoutAdmin = ({ children }: { children?: React.ReactNode }) => {
             className="flex flex-col gap-2 [&>button]:px-3 [&>button]:py-1 [&>button]:flex [&>button]:justify-between [&>button]:after:content-['→_'] [&>button:hover]:bg-foreground/20 [&>button]:rounded-md"
           >
             <Link as="button" href="/Admin">Dashboard</Link>
-            <Link as="button" href="/Admin/Users">Users</Link>
+            { AuthUser?.role === 'admin' &&
+              <Link as="button" href="/Admin/Users">Users</Link>
+            }
           </div>
         </div>
         <div
           className="flex flex-col gap-2"
         >
           <p
-            className="mb-2"
+            className="mb-2 flex items-center gap-2"
           >
-            User:
+            <FaUserCircle className="size-10" />
             <span
               className="font-bold"
             > {AuthUser?.name}</span>
@@ -55,11 +55,26 @@ const LayoutAdmin = ({ children }: { children?: React.ReactNode }) => {
       <main
         className="w-full h-screen p-4 text-background select-text overflow-y-scroll"
       >
-        <h1
-          className="text-3xl font-bold"
-        >{PageName}</h1>
+        <div
+          className="flex justify-between"
+        >
+          <h1
+            className="text-3xl font-bold"
+          >{title}</h1>
+          { AuthUser?.role !== "user" && title === "Dashboard" &&
+            <Link
+              as="button"
+              href="/Admin/Chart/Tambah"
+              className="w-fit h-full px-4 py-1 text-foreground bg-background shadow-sm shadow-background rounded-md"
+            >
+              Tambah Data
+            </Link>
+          }
+        </div>
         <hr className="w-full h-1 mb-2 bg-background" />
-        {children}
+        <div
+          className="p-4"
+        >{children}</div>
       </main>
     </div>
   )

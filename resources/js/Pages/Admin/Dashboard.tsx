@@ -1,10 +1,11 @@
-import { LayoutAdmin } from "@/Components"
-import { ServiceCharts } from "@/Components/Partials/Dashboard/ServicesChart"
+import { LayoutAdmin, ServiceCharts } from "@/Components"
 import { Charts } from "@/Types"
 
 const AdminDashboard = ({ charts }: { charts: Charts[] }) => {
   return (
-    <LayoutAdmin>
+    <LayoutAdmin
+      title="Dashboard"
+    >
       <ServiceCharts charts={charts} />
     </LayoutAdmin>
   )

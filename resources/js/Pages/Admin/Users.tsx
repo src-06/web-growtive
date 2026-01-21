@@ -1,7 +1,4 @@
-import { LayoutAdmin } from "@/Components"
-
-// TODO: Buat desain baru yang simpel.
-import { cn } from "@/Lib/util"
+import { Background, LayoutAdmin } from "@/Components"
 import { User, Users } from "@/Types"
 import { router, usePage } from "@inertiajs/react"
 import { ChangeEvent } from "react"
@@ -12,69 +9,78 @@ const AdminUsers = ({ users }: { users: Users }) => {
   const destroy = (id: number, name: string) => {
     if (confirm(`Mau hapus ${name}?`))
       router.delete(route('users.destroy', id))
-  }, auth = usePage().props.auth,
-  canEdit = () => auth.user?.role !== 'admin' // Admin only this is for diabled button when role user other than admin
+  }, authUser = usePage().props.auth.user,
+  canEdit = (user: User) => user.role === 'admin' || authUser?.role !== 'admin' // Admin only this is for diabled button when role user other than admin
 
   return (
-    <LayoutAdmin>
-      <div
-        className="w-full h-[calc(100dvh-5.5rem)] flex flex-col justify-between items-center"
+    <LayoutAdmin
+      title="Tambah Data Penjualan"
+    >
+      <Background
+        className="p-6"
       >
-        <table>
-          <thead>
-            <tr>
-              <TH>No</TH>
-              <TH>Name</TH>
-              <TH>Email</TH>
-              <TH>Role</TH>
-              <TH
-                className="border-r-0"
-              >Action</TH>
-            </tr>
-          </thead>
-          <tbody>
-            { users.data.map((user, index) => (
-              <tr key={ user.id }>
-                <TD>{ index + users.from + '.' }</TD>
-                <TD>{ user.name }</TD>
-                <TD>{ user.email }</TD>
-                <TD><RoleSelect user={user} canEdit={canEdit()} /></TD>
-                <TD
-                  className="border-r-0"
-                >
-                  <button
-                    onClick={() => destroy(user.id, user.name)}
-                    className="px-2 text-white hover:text-bg disabled:text-fg bg-red-500 hover:bg-red-300 disabled:bg-red-800 rounded-md transition-colors duration-500"
-                    disabled={canEdit()}
-                  >Delete User</button>
-                </TD>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        {1 !== users.last_page && <Pagination users={users} />}
-      </div>
+        <div
+          className="flex justify-between"
+        >
+          <div
+            id="instagram"
+            className="w-full flex flex-col items-center"
+          >
+            <h1
+              className="mb-2 font-semibold"
+            >Name</h1>
+            { users.data.map(user =>
+              <p
+                key={user.id}
+                className="w-full h-8 px-2 flex items-center font-semibold border border-foreground/50"
+              >{user.name}</p>
+            )}
+          </div>
+          <div
+            id="tiktok"
+            className="w-full flex flex-col items-center"
+          >
+            <h1
+              className="mb-2 font-semibold"
+            >Email</h1>
+            { users.data.map(user =>
+              <p
+                key={user.id}
+                className="w-full h-8 px-2 flex items-center font-semibold border border-foreground/50"
+              >{user.email}</p>
+            )}
+          </div>
+          <div
+            id="instagram_tiktok"
+            className="w-full flex flex-col items-center"
+          >
+            <h1
+              className="mb-2 font-semibold"
+            >Role</h1>
+            { users.data.map(user =>
+              <RoleSelect user={user} canEdit={canEdit(user)} />
+            )}
+          </div>
+          <div
+            id="action"
+            className="ml-2 w-full flex flex-col items-center"
+          >
+            <h1
+              className="mb-2 font-semibold"
+            >Action</h1>
+            { users.data.map(user =>
+              <button
+                key={user.id}
+                onClick={() => destroy(user.id, user.name)}
+                disabled={canEdit(user)}
+                className="w-full h-6 my-1 px-2 text-background font-bold bg-red-500 hover:bg-red-300 disabled:bg-red-900 rounded-md transition-colors duration-500"
+              >Hapus</button>
+            )}
+          </div>
+        </div>
+        <PaginationUsers users={users} />
+      </Background>
     </LayoutAdmin>
-  )
-}
-
-function TH({ children, className }: { children: React.ReactNode; className?: string }) {
-  return (
-    <th
-      className={cn("px-4 py-1 text-left border-b-2 border-r-2", className)}
-    >
-      { children }
-    </th>
-  )
-}
-
-function TD({ children, className }: { children: React.ReactNode; className?: string }) {
-  return (
-    <td
-      className={cn("px-4 py-1 border-t-2 border-r-2", className)}
-    >
-      { children }
-    </td>
   )
 }
 
@@ -90,26 +96,25 @@ function RoleSelect({ user, canEdit }: { user: User; canEdit: boolean }) {
 
   return (
     canEdit ?
-      <span className="font-bold uppercase">{ user.role }</span>
+      <span className="w-full h-8 px-2 flex items-center font-semibold uppercase border border-foreground/50">{user.role}</span>
     : <select
-        defaultValue={ user.role }
+        defaultValue={user.role}
         onChange={e => handleChange(e)}
-        className="font-bold"
+        className="w-full h-8 px-2 font-semibold border border-foreground/50"
       >
-        <option value="admin">ADMIN</option>
         <option value="editor">EDITOR</option>
         <option value="user">USER</option>
       </select>
   )
 }
 
-function Pagination({ users }: { users: Users }) {
+function PaginationUsers({ users }: { users: Users }) {
   const pages = []; for (let _ = 1; _ <= users.last_page; _++)
     pages.push(_)
 
   return (
     <div
-      className="flex justify-center items-center gap-2"
+      className="mt-2 flex justify-center items-center gap-2"
     >
       <Button
         disabled={!usePage().url.includes('?page='+users.current_page)}
@@ -140,8 +145,8 @@ function Pagination({ users }: { users: Users }) {
 function Button({ children, to, active, disabled, ...props }: { children: React.ReactNode; to?: number; active?: boolean; disabled?: boolean }) {
   return (
     <button
-      onClick={() => router.get('/admin/users', { page: to })}
-      className={`size-7 flex justify-center items-center ${active || !disabled && active == undefined ? 'text-white' : 'text-fg/70' } font-bold bg-bg rounded-md`}
+      onClick={() => router.get('/Admin/Users', { page: to })}
+      className={`size-7 flex justify-center items-center ${active || !disabled && active == undefined ? 'text-white' : 'text-foreground/50' } font-bold bg-background rounded-md`}
       disabled={disabled}
       {...props}
     >{ children }</button>

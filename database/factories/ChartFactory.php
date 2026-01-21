@@ -21,7 +21,7 @@ class ChartFactory extends Factory
       'tiktok' => random_int(0, 15),
       'instagram_tiktok' => random_int(0, 15),
       'endorsement' => random_int(0, 15),
-      'created_at' => fake()->dateTimeBetween('-2 year', '+1 year'),
+      'created_at' => fake()->dateTimeBetween('-2 year', 'now'),
     ];
   }
 }

@@ -37,6 +37,7 @@ const AdminRegister = () => {
               onChange={e => setData('name', e.target.value)}
               className="px-2 py-1 outline-0 border-b-2 border-fg/80"
             />
+            <p>{errors.name}</p>
           </div>
           <div>
             <label htmlFor="email">Email</label>
@@ -48,6 +49,7 @@ const AdminRegister = () => {
               onChange={e => setData('email', e.target.value)}
               className="px-2 py-1 outline-0 border-b-2 border-fg/80"
             />
+            <p>{errors.email}</p>
           </div>
           <div>
             <label htmlFor="password">Password</label>
@@ -59,6 +61,7 @@ const AdminRegister = () => {
               onChange={e => setData('password', e.target.value)}
               className="px-2 py-1 outline-0 border-b-2 border-fg/80"
             />
+            <p>{errors.password}</p>
           </div>
           <input
             type="submit"

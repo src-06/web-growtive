@@ -16,8 +16,11 @@ Route::middleware('auth')
 ->prefix('Admin')
 ->group(function () {
   Route::get('/', [ChartController::class, 'index']);
-  Route::get('/AddChartData', [ChartController::class, 'create']);
-  Route::get('/Users', [UserController::class, 'index']);
+  Route::get('/Chart', function () { return redirect('/Admin'); });
+  Route::middleware('check:admin,editor')
+  ->get('/Chart/Tambah', [ChartController::class, 'create']);
+  Route::middleware('check:admin')
+  ->get('/Users', [UserController::class, 'index']);
 });
 
 Route::resource('/users', UserController::class)

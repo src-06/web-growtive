@@ -1,7 +1,23 @@
+import { motion } from "framer-motion";
+import logoIG from "~/images/services/ig.svg"
+import logoTT from "~/images/services/tt.svg"
 
 export function Card2({ id, children, count }: { id: string; children: React.ReactNode; count: number }) {
   return (
-    <div
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        delay: 0.2,
+        duration: 0.8,
+        ease: 'backInOut',
+      }}
       id={`${id}`}
       className="w-full h-fit px-6 py-20 grid grid-cols-4 gap-1 bg-white rounded-[3rem]"
     >
@@ -15,7 +31,7 @@ export function Card2({ id, children, count }: { id: string; children: React.Rea
             className="w-full flex items-center gap-2"
           >
             <img
-              src="assets/images/services/tt.svg"
+              src={logoTT}
               alt="tt"
               className="w-15"
             />
@@ -26,7 +42,7 @@ export function Card2({ id, children, count }: { id: string; children: React.Rea
             className="w-full flex items-center gap-2"
           >
             <img
-              src="assets/images/services/ig.svg"
+              src={logoIG}
               alt="ig"
               className="w-15"
             />
@@ -40,9 +56,9 @@ export function Card2({ id, children, count }: { id: string; children: React.Rea
         className="ml-4 col-span-3"
       >
         <div
-          className={`grid grid-cols-${count} gap-13 text-fg overflow-x-auto`}
+          className={`grid grid-cols-${count} gap-13 text-foreground overflow-x-auto`}
         >{children}</div>
       </div>
-    </div>
+    </motion.div>
   )
 }

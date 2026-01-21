@@ -11,12 +11,17 @@ export interface User {
   name: string
   email: string
   role: string
-  email_verified_at: string | null
-  created_at: string
-  updated_at: string
+}
+
+export interface PaginateCharts {
+  current_page: number
+  data: Charts[]
+  from: number
+  last_page: number
 }
 
 export interface Charts {
+  id: number
   instagram: number
   tiktok: number
   instagram_tiktok: number

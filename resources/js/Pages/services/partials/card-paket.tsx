@@ -2,7 +2,7 @@
 export function CardPaket({ paket, price1, price2, children }: { paket: string; price1: string; price2?: string; children: React.ReactNode }) {
   return (
     <div
-      className="relative w-60 h-110 flex flex-col items-center bg-linear-to-r from-[#797979] to-bg rounded-3xl"
+      className="relative w-60 h-110 flex flex-col items-center bg-linear-to-r from-[#797979] to-background rounded-3xl"
     >
       <h1
         className="py-3 font-black"
