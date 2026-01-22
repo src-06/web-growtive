@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { NavBtn } from "./Headers"
-import { LuMail, LuMapPin, LuPhone } from "react-icons/lu"
-import logo from "~/images/logo.png"
+import { LuMail, LuMapPin } from "react-icons/lu"
+import logo from "~/images/logo_dark.png"
 
 const Footers = () => {
   return (
@@ -26,11 +26,8 @@ const Footers = () => {
         <img
           src={logo}
           alt="Logo Growdience Creative"
-          className="size-12 drop-shadow-[0_0_2px] drop-shadow-white rounded-full"
+          className="w-45 drop-shadow-[0_0_2px] drop-shadow-white rounded-full"
         />
-        <h1
-          className="text-3xl font-bold"
-        >Growdience</h1>
       </motion.div>
       <motion.div
         initial={{

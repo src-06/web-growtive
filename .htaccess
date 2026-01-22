@@ -12,5 +12,5 @@
 </Files>
 
 <IfModule mod_alias.c>
-  RedirectMatch 301 ^/web-growtive/$ https://indie.co.id/web-growtive/public
+  RedirectMatch 301 ^/$ https://growtive.page.gd/public
 </IfModule>

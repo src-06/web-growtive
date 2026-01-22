@@ -28,7 +28,7 @@ const Headers = () => {
         <img
           src={logo}
           alt="Logo Growdience Creative"
-          className="size-12 drop-shadow-[0_0_2px] drop-shadow-white rounded-full"
+          className="w-25 drop-shadow-[0_0_2px] drop-shadow-background rounded-full"
         />
       </div>
       <NavBtn />

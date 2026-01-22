@@ -8,6 +8,8 @@ import imgAbout2 from "~/images/services/about2.png"
 import logoIG from "~/images/services/ig.svg"
 import logoTT from "~/images/services/tt.svg"
 import logoIG_TT from "~/images/services/ig-tt.svg"
+import bgTestimoni from "~/images/bg/testimoni.png"
+import profileTestimoni from "~/images/profile_testimoni.png"
 
 import { Card } from "./services/partials/card"
 import { CardPaket } from "./services/partials/card-paket"
@@ -511,6 +513,113 @@ const HalamanPengelolaanAkunMedsos = () => {
               <li>Riset Hastag</li>
             </CardPaket>
           </Card2>
+        </div>
+
+        <div
+          className="pb-50 w-full"
+        >
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: -20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: 'backInOut',
+            }}
+            className="mb-6 text-3xl font-bold"
+          >Cerita Klien</motion.h1>
+          <div
+            className="relative"
+          >
+            <motion.img
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.6,
+                ease: 'backInOut',
+              }}
+              src={bgTestimoni}
+              alt="Background Testimoni"
+              className="w-full"
+            />
+            <div
+              className="absolute top-0 w-full h-full flex flex-wrap justify-center items-center gap-2"
+            >
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: -20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  delay: 0.4,
+                  duration: 0.6,
+                  ease: 'backInOut',
+                }}
+              >
+                <p
+                  className="m-6 p-8 bg-foreground rounded-4xl"
+                >Tim Growdience Creative sangat profesional. Mereka tidak hanya mengerjakan tugas, tapi juga memberikan solusi kreatif yang tidak saya pikirkan sebelumnya. Hasilnya melebihi ekspektasi. Sangat direkomendasikan untuk yang butuh Pengelolaan Akun Medsos.</p>
+                <div
+                  className="ml-8 flex items-center gap-4"
+                >
+                  <img
+                    src={profileTestimoni}
+                    alt="Profile Testimoni"
+                    className="size-17"
+                  />
+                  <h1
+                    className="text-xl text-foreground font-bold"
+                  >Fajar Dunia</h1>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: -20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  delay: 0.4,
+                  duration: 0.6,
+                  ease: 'backInOut',
+                }}
+              >
+                <p
+                  className="m-6 p-8 bg-foreground rounded-4xl"
+                >Tim Growdience Creative sangat profesional. Mereka tidak hanya mengerjakan tugas, tapi juga memberikan solusi kreatif yang tidak saya pikirkan sebelumnya. Hasilnya melebihi ekspektasi. Sangat direkomendasikan untuk yang butuh Pengelolaan Akun Medsos.</p>
+                <div
+                  className="ml-8 flex items-center gap-4"
+                >
+                  <img
+                    src={profileTestimoni}
+                    alt="Profile Testimoni"
+                    className="size-17"
+                  />
+                  <h1
+                    className="text-xl text-foreground font-bold"
+                  >Fajar Dunia</h1>
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </SectionGradBG>
     </LayoutPages>
