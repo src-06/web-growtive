@@ -87,7 +87,7 @@ const HalamanPengelolaanAkunMedsos = () => {
 
       <SectionGradBG>
         <div
-          className="pt-10 pb-5 grid grid-cols-2 grid-rows-2 text-background"
+          className="w-full h-full pt-10 pb-5 grid grid-cols-2 grid-rows-2 text-background"
         >
           <div
             className="w-full h-full flex justify-center items-center"
