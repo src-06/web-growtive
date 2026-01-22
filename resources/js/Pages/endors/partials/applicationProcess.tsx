@@ -21,17 +21,17 @@ const process: ProcessProps[] = [
   {
     title: "Negosiasi Kebutuhan",
     img: imgNegosiasi,
-    detail: "Konsultasi adalah proseskomunikasi atau pertemuan antara dua pihak atau lebih untuk mendiskusikan, berbagi informasi, dan mencapai keputusan atau solusi terkait suatu masalah atau topik tertentu. Dalam konteks lain, konsultasi juga dapat diartikan sebagai pertukaran pikiran untuk mendapatkan kesimpulan, seperti nasihat atau saran.",
+    detail: "Negosiasi adalah proses komunikasi dan interaksi antara dua pihak atau lebih yang memiliki kepentingan berbeda untuk mencapai kesepakatan bersama. Dalam proses negosiasi, setiap pihak menyampaikan kebutuhan, keinginan, dan batasannya masing-masing dengan tujuan memperoleh hasil yang saling menguntungkan.",
   },
   {
     title: "Pengerjaan & Revisi",
     img: imgPengerjaan,
-    detail: "Konsultasi adalah proseskomunikasi atau pertemuan antara dua pihak atau lebih untuk mendiskusikan, berbagi informasi, dan mencapai keputusan atau solusi terkait suatu masalah atau topik tertentu. Dalam konteks lain, konsultasi juga dapat diartikan sebagai pertukaran pikiran untuk mendapatkan kesimpulan, seperti nasihat atau saran.",
+    detail: "Pengerjaan dilakukan sesuai kesepakatan yang telah ditentukan. Revisi diberikan berdasarkan masukan pihak terkait sesuai dengan ketentuan yang disepakati.",
   },
   {
     title: "Publish",
     img: imgPublish,
-    detail: "Konsultasi adalah proseskomunikasi atau pertemuan antara dua pihak atau lebih untuk mendiskusikan, berbagi informasi, dan mencapai keputusan atau solusi terkait suatu masalah atau topik tertentu. Dalam konteks lain, konsultasi juga dapat diartikan sebagai pertukaran pikiran untuk mendapatkan kesimpulan, seperti nasihat atau saran.",
+    detail: "Tahap publish dilakukan setelah seluruh proses pengerjaan dan revisi selesai serta telah mendapatkan persetujuan dari pihak terkait. Pada tahap ini, hasil pekerjaan dipublikasikan sesuai dengan platform atau media yang telah disepakati.",
   },
 ]
 
@@ -94,7 +94,7 @@ export function ApplicationProcess() {
           >{data.title}</h2>
           <p
             id={"detail-"+index}
-            className="h-0 opacity-0 text-pretty underline"
+            className="h-0 opacity-0 text-justify underline"
           >{data.detail}</p>
           <button
             id={"button-"+index}
