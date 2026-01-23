@@ -1,9 +1,21 @@
 
-export interface Users {
-  current_page: number
-  data: User[]
-  from: number
-  last_page: number
+export interface Charts {
+  id: number
+  instagram: number
+  tiktok: number
+  instagram_tiktok: number
+  endorsement: number
+  created_at: string
+}
+
+export interface Article {
+  id_article: string
+  id_user: number
+  user: User
+  title: string
+  body: string
+  created_at: string
+  updated_at: string
 }
 
 export interface User {
@@ -13,18 +25,9 @@ export interface User {
   role: string
 }
 
-export interface PaginateCharts {
+export interface PaginatedProps<T> {
   current_page: number
-  data: Charts[]
+  data: T[]
   from: number
   last_page: number
-}
-
-export interface Charts {
-  id: number
-  instagram: number
-  tiktok: number
-  instagram_tiktok: number
-  endorsement: number
-  created_at: string
 }

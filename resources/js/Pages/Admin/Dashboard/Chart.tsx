@@ -1,7 +1,7 @@
 import { LayoutAdmin, ServiceCharts } from "@/Components"
 import { Charts } from "@/Types"
 
-const AdminDashboard = ({ charts }: { charts: Charts[] }) => {
+const AdminDashboardChart = ({ charts }: { charts: Charts[] }) => {
   return (
     <LayoutAdmin
       title="Dashboard"
@@ -11,4 +11,4 @@ const AdminDashboard = ({ charts }: { charts: Charts[] }) => {
   )
 }
 
-export default AdminDashboard
+export default AdminDashboardChart

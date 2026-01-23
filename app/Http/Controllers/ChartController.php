@@ -9,7 +9,7 @@ class ChartController extends Controller
 {
   public function index()
   {
-    return inertia('Admin/Dashboard', [
+    return inertia('Admin/Dashboard/Chart', [
       'charts' => Chart::all(),
     ]);
   }
@@ -35,7 +35,7 @@ class ChartController extends Controller
 
   public function create()
   {
-    return inertia('Admin/Chart/Tambah', [
+    return inertia('Admin/Dashboard/Tambah', [
       'charts' => Chart::latest("id")->paginate(20),
     ]);
   }
@@ -45,7 +45,7 @@ class ChartController extends Controller
     //
   }
 
-  public function update(Request $request, Chart $chart)
+  public function update(Chart $chart)
   {
     //
   }

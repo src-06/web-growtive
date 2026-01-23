@@ -1,12 +1,11 @@
-import { LayoutPages, SectionGradBG } from "@/Components"
-import { ApplicationProcess } from "./endors/partials/applicationProcess"
+import { motion } from "framer-motion"
+import { Link } from "@inertiajs/react"
+import { ApplicationProcess, LayoutPages, SectionGradBG } from "@/Components"
 import bgHero from "~/images/bg/endors.svg"
 import imgHero from "~/images/endors/hero.png"
 import imgAbout1 from "~/images/endors/about1.png"
 import imgAbout2 from "~/images/endors/about2.png"
 import imgContactUs from "~/images/endors/contact-us.svg"
-import { motion } from "framer-motion"
-import { Link } from "@inertiajs/react"
 
 const HalamanEndorsement = () => {
   return (
