@@ -48,6 +48,47 @@ const Headers = () => {
   )
 }
 
+interface NavMenusProps {
+  title: string
+  url?: string
+  submenu?: {
+    title: string
+    url: string
+  }[]
+}
+
+const NavMenus: NavMenusProps[] = [
+  {
+    title: "Beranda",
+    url: "/",
+  },
+  {
+    title: "TentangKami",
+    url: "/TentangKami",
+  },
+  {
+    title: "Layanan",
+    submenu: [
+      {
+        title: "Endorsement",
+        url: "/Endorsement",
+      },
+      {
+        title: "Pengelolaan Akun Medsos",
+        url: "/PengelolaanAkunMedsos",
+      },
+    ],
+  },
+  {
+    title: "Artikel",
+    url: "/Artikel",
+  },
+  {
+    title: "Kontak Kami",
+    url: "https://wa.wizard.id/ac9290",
+  },
+]
+
 const NavBtn = ({ orientation = 'vertical' }: { orientation?: 'vertical' | 'horizontal' }) => {
   const [ dropdown, setDropdown ] = useState(false),
     { url } = usePage(),
@@ -57,50 +98,62 @@ const NavBtn = ({ orientation = 'vertical' }: { orientation?: 'vertical' | 'hori
     <nav
       className={`flex ${ horiz ? "flex-col gap-1 [&>button]:text-left" : "gap-4" }`}
     >
-      { [ "Beranda", "Layanan", "Tentang Kami" ].map((value, index) =>
-        index === 1
-        ? <div
-            key={index}
-            className="relative"
-          >
-            <button
-              onClick={() => setDropdown(!dropdown)}
-              className="w-full nav-btn"
+      { NavMenus.map(menu => {
+        if (menu.submenu) {
+          return (
+            <div
+              key={menu.title}
+              className="relative"
             >
-              <span
-                className={`flex items-center gap-2 ${ dropdown && "[&>svg]:-rotate-90" }`}
+              <button
+                onClick={() => setDropdown(!dropdown)}
+                className="w-full nav-btn"
               >
-                {value}
-                <FaChevronDown size={16} />
-              </span>
-            </button>
-            { dropdown &&
-              <div
-                className={`absolute left-1/2 ${ horiz ? "top-1/2 -translate-y-1/2 translate-x-1/3" : "top-10 -translate-x-1/2" } flex flex-col bg-background/30 rounded-lg`}
-              >
-                { [ "Endorsement", "Pengelolaan Akun Medsos" ].map((value, index) =>
-                  <Link
-                    key={index}
-                    as="button"
-                    href={`/${value.replaceAll(' ', '')}`}
-                    className={`px-3 py-1 text-left text-nowrap ${ url === "/"+value.replaceAll(' ', '') && "font-bold" } hover:bg-background/20 ${ index === 0 ? "rounded-t-lg" : "rounded-b-lg" }`}
-                  >{value}</Link>
-                )}
-              </div>
-            }
-          </div>
-        : <Link
-            key={index}
+                <span
+                  className={`flex items-center gap-2 ${ dropdown && "[&>svg]:-rotate-90" }`}
+                >
+                  {menu.title}
+                  <FaChevronDown size={16} />
+                </span>
+              </button>
+              { dropdown &&
+                <div
+                  className={`absolute left-1/2 ${ horiz ? "top-1/2 -translate-y-1/2 translate-x-1/3" : "top-10 -translate-x-1/2" } flex flex-col bg-background/30 rounded-lg`}
+                >
+                  { menu.submenu.map(sub =>
+                    <Link
+                      key={sub.title}
+                      as="button"
+                      href={sub.url}
+                      className={`px-3 py-1 text-left text-nowrap ${ url === sub.url && "font-bold" } hover:bg-background/20 ${ sub.title === "Endorsement" ? "rounded-t-lg" : "rounded-b-lg" }`}
+                    >{sub.title}</Link>
+                  )}
+                </div>
+              }
+            </div>
+          )
+        }
+
+        if (menu.title === "Kontak Kami") {
+          return (
+            <Link
+              key={menu.title}
+              as="button"
+              onClick={() => window.open(menu.url, '_blank')}
+              className={`nav-btn ${ url === menu.url && "font-bold" }`}
+            >{menu.title}</Link>
+          )
+        }
+
+        return (
+          <Link
+            key={menu.title}
             as="button"
-            href={`/${value === "Beranda" ? "" : value.replace(' ', '')}`}
-            className={`nav-btn ${ url === "/"+(value === "Beranda" ? "" : value.replace(' ', '')) && "font-bold" }`}
-          >{value}</Link>
-      )}
-      <Link
-        as="button"
-        onClick={() => window.open('https://wa.wizard.id/ac9290', '_blank')}
-        className="nav-btn"
-      >Kontak Kami</Link>
+            href={menu.url}
+            className={`nav-btn ${ url === menu.url && "font-bold" }`}
+          >{menu.title}</Link>
+        )
+      })}
     </nav>
   )
 }

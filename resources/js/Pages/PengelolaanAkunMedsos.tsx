@@ -1,5 +1,6 @@
 import { Link } from "@inertiajs/react"
-import { LayoutPages, SectionGradBG } from "@/Components"
+import { motion } from "framer-motion"
+import { Card, Card2, CardPaket, LayoutPages, SectionGradBG } from "@/Components"
 
 import bgHero from "~/images/bg/endors.svg"
 import imgHero from "~/images/services/hero.png"
@@ -10,11 +11,6 @@ import logoTT from "~/images/services/tt.svg"
 import logoIG_TT from "~/images/services/ig-tt.svg"
 import bgTestimoni from "~/images/bg/testimoni.png"
 import profileTestimoni from "~/images/profile_testimoni.png"
-
-import { Card } from "./services/partials/card"
-import { CardPaket } from "./services/partials/card-paket"
-import { Card2 } from "./services/partials/card2"
-import { motion } from "framer-motion"
 
 const HalamanPengelolaanAkunMedsos = () => {
   return (

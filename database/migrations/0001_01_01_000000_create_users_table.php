@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\Role;
+use App\Models\Post;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -21,7 +22,7 @@ return new class extends Migration
       $table->string('role')->default(Role::USER);
       $table->rememberToken();
       $table->timestamps();
-  });
+    });
 
     Schema::create('password_reset_tokens', function (Blueprint $table) {
       $table->string('email')->primary();

@@ -1,8 +1,7 @@
 import { LayoutPages, SectionGradBG } from "@/Components"
 import { FaChevronRight, FaInstagram, FaTiktok } from "react-icons/fa6"
-import { Head, Link } from "@inertiajs/react"
+import { Link } from "@inertiajs/react"
 import bgHome from "~/images/bg/home.svg"
-import imgProfile from "~/images/about/profile.jpg"
 import imgServices from "~/images/endors/service.png"
 import { motion } from "framer-motion"
 
@@ -33,9 +32,6 @@ const Steps: StepsProps[] = [
 const HalamanBeranda = () => {
   return (
     <LayoutPages>
-      <Head>
-      </Head>
-
       <section
         className="relative w-full h-dvh flex justify-center items-center"
       >
@@ -112,61 +108,6 @@ const HalamanBeranda = () => {
           </motion.div>
         </div>
       </section>
-
-      <SectionGradBG>
-        <div
-          className="h-full flex flex-col justify-center items-center gap-20"
-        >
-          <motion.h1
-            initial={{
-              opacity: 0,
-              y: -20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-              ease: 'backInOut',
-            }}
-            className="text-3xl uppercase"
-          >
-            Tentang
-            <span
-              className="font-bold"
-            > Kami</span>
-          </motion.h1>
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-              ease: 'backInOut',
-            }}
-            className="flex gap-8"
-          >
-            <img
-              src={imgProfile}
-              alt="Profile Image"
-              className="w-60 rounded-3xl"
-            />
-            <div
-              className="flex justify-center items-center bg-foreground border-2 rounded-3xl"
-            >
-              <p
-                className="w-[85%] h-fit text-justify font-bold uppercase"
-              >Growdience Creative adalah mitra strategis Anda dalam membangun dan memperluas audiens brand secara kreatif dan terukur. Kami percaya bahwa iklan yang efektif bukan hanya tentang menjangkau banyak orang, tetapi tentang menumbuhkan komunitas yang setia ("Growing an Audience").</p>
-            </div>
-          </motion.div>
-        </div>
-      </SectionGradBG>
 
       <SectionGradBG>
         <div

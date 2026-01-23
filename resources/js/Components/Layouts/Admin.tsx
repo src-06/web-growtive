@@ -2,15 +2,15 @@ import { Link, router, usePage } from "@inertiajs/react"
 import { FaUserCircle } from "react-icons/fa"
 import { route } from "ziggy-js"
 
-const LayoutAdmin = ({ children, title }: { children?: React.ReactNode, title?: string }) => {
-  const { props } = usePage()
+const MenuAdmin = ["Dashboard", "Artikel", "Testimoni", "Users", "Pengaturan"]
 
-  const AuthUser = props.auth.user
+const LayoutAdmin = ({ children, title }: { children?: React.ReactNode, title?: string }) => {
+  const AuthUser = usePage().props.auth.user
 
   return (
     <div className="w-full h-full flex overflow-hidden">
       <aside
-        className="w-80 h-screen p-4 flex flex-col justify-between bg-background"
+        className="w-80 h-screen px-4 py-6 flex flex-col justify-between bg-background shadow-xl shadow-background rounded-r-[3em]"
       >
         <div>
           <h1
@@ -19,10 +19,9 @@ const LayoutAdmin = ({ children, title }: { children?: React.ReactNode, title?: 
           <div
             className="flex flex-col gap-2 [&>button]:px-3 [&>button]:py-1 [&>button]:flex [&>button]:justify-between [&>button]:after:content-['→_'] [&>button:hover]:bg-foreground/20 [&>button]:rounded-md"
           >
-            <Link as="button" href="/Admin">Dashboard</Link>
-            { AuthUser?.role === 'admin' &&
-              <Link as="button" href="/Admin/Users">Users</Link>
-            }
+            { MenuAdmin.map(menu =>
+              <Link key={menu} as="button" href={`/Admin${menu === "Dashboard" ? "/" : "/"+menu}`}>{menu}</Link>
+            )}
           </div>
         </div>
         <div
@@ -64,7 +63,7 @@ const LayoutAdmin = ({ children, title }: { children?: React.ReactNode, title?: 
           { AuthUser?.role !== "user" && title === "Dashboard" &&
             <Link
               as="button"
-              href="/Admin/Chart/Tambah"
+              href="/Admin/Tambah"
               className="w-fit h-full px-4 py-1 text-foreground bg-background shadow-sm shadow-background rounded-md"
             >
               Tambah Data
@@ -80,4 +79,4 @@ const LayoutAdmin = ({ children, title }: { children?: React.ReactNode, title?: 
   )
 }
 
-export { LayoutAdmin }
+export { LayoutAdmin, MenuAdmin }
