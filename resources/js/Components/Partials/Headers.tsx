@@ -110,7 +110,7 @@ const NavBtn = ({ orientation = 'vertical' }: { orientation?: 'vertical' | 'hori
                 className="w-full nav-btn"
               >
                 <span
-                  className={`flex items-center gap-2 ${ dropdown && "[&>svg]:-rotate-90" }`}
+                  className={`flex ${ horiz && "justify-between" } items-center gap-2 ${ dropdown && "[&>svg]:-rotate-90" }`}
                 >
                   {menu.title}
                   <FaChevronDown size={16} />
@@ -140,7 +140,7 @@ const NavBtn = ({ orientation = 'vertical' }: { orientation?: 'vertical' | 'hori
               key={menu.title}
               as="button"
               onClick={() => window.open(menu.url, '_blank')}
-              className={`nav-btn ${ url === menu.url && "font-bold" }`}
+              className="nav-btn"
             >{menu.title}</Link>
           )
         }

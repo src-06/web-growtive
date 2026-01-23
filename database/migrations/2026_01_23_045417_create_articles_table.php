@@ -19,10 +19,6 @@ return new class extends Migration
         table: 'users',
         indexName: 'article_id_user',
       )->cascadeOnDelete();
-      // $table->foreignId('id_tag')->constrained(
-      //   table: 'tags',
-      //   indexName: 'article_id_tag',
-      // );
       $table->string('title');
       $table->text('body');
       $table->timestamps();

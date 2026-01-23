@@ -40,10 +40,10 @@ const ArtikelList = ({ articles }: { articles: PaginatedProps<Article> }) => {
                   className="flex flex-col text-xs"
                 >
                   <span>Dibuat pada: {toLocalDate({ISO_date: article.created_at})}</span>
-                  <span>Update terakhir: {toLocalDate({ISO_date: article.updated_at})}</span>
+                  <span>Diedit pada: {toLocalDate({ISO_date: article.updated_at})}</span>
                 </div>
               </div>
-              <p>
+              <p className="text-pretty indent-8 tracking-wider">
                 {article.body.slice(0, 300)}...{" "}
                 <Link
                   as="button"

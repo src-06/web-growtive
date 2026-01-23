@@ -17,13 +17,7 @@ class DatabaseSeeder extends Seeder
   public function run(): void
   {
     User::factory()
-    ->has(
-      Article::factory()
-      ->has(Tag::factory()
-        ->count(3)
-      )->count(10),
-      'articles'
-    )->create([
+    ->has(Article::factory()->count(4))->create([
       'name' => 'Test Admin',
       'email' => 'test@admin.com',
       'password' => bcrypt('password#1234'),
@@ -31,13 +25,7 @@ class DatabaseSeeder extends Seeder
     ]);
 
     User::factory()
-    ->has(
-      Article::factory()
-      ->has(Tag::factory()
-        ->count(3)
-      )->count(10),
-      'articles'
-    )->create([
+    ->has(Article::factory()->count(4))->create([
       'name' => 'Test Editor',
       'email' => 'test@editor.com',
       'password' => bcrypt('password#1234'),

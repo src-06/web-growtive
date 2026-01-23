@@ -30,14 +30,18 @@ const AdminArtikelLihat = ({ article }: { article: Article }) => {
               className="flex flex-col text-foreground/80"
             >
               <span>Dibuat pada: <span className="font-semibold">{toLocalDate({ISO_date: article.created_at})}</span></span>
-              <span>Update terakhir: <span className="font-semibold">{toLocalDate({ISO_date: article.updated_at})}</span></span>
+              <span>Diedit pada: <span className="font-semibold">{toLocalDate({ISO_date: article.updated_at})}</span></span>
             </div>
           </div>
           <hr className="w-full h-0.5 my-3 border border-dashed outline-0" />
           <hr className="w-full h-0.5 my-3 border border-dashed outline-0" />
-          <p>
-            {article.body}
-          </p>
+          <div
+            className="flex flex-col gap-y-6"
+          >
+            {article.body.split('\\n').map((paragraph, index) =>
+              <p key={index} className="text-pretty indent-8 tracking-wider">{paragraph}</p>
+            )}
+          </div>
         </div>
       </SectionGradBG>
     </LayoutPages>

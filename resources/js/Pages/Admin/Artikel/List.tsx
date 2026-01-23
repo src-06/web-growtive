@@ -1,8 +1,7 @@
 import { Background, LayoutAdmin, PaginatedPage } from "@/Components"
 import { Article, PaginatedProps } from "@/Types"
-import { Link, router, usePage } from "@inertiajs/react"
+import { Link, router } from "@inertiajs/react"
 import { FaTrashCan } from "react-icons/fa6"
-import { LuChevronLeft, LuChevronRight, LuChevronsLeft, LuChevronsRight } from "react-icons/lu"
 import { route } from "ziggy-js"
 
 const AdminArtikelList = ({ articles }: { articles: PaginatedProps<Article> }) => {
@@ -44,8 +43,8 @@ const AdminArtikelList = ({ articles }: { articles: PaginatedProps<Article> }) =
                   className="opacity-70"
                 > {article.user?.name}</span>
               </p>
-              <p>
-                {article.body.slice(0, 100)+"... "}
+              <p className="text-pretty indent-8 tracking-wider">
+                {article.body.slice(0, 300)+"... "}
                 <Link
                   as="button"
                   href={"/Artikel/"+article.id_article}
