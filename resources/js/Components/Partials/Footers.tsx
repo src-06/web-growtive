@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { NavBtn } from "./Headers"
-import { LuMail, LuMapPin } from "react-icons/lu"
-import logo from "~/images/logo_dark.png"
+import { LuMapPin } from "react-icons/lu"
+import { basePath } from "@/Config/env"
 
 const Footers = () => {
   return (
@@ -24,7 +24,7 @@ const Footers = () => {
         className="flex items-center gap-2"
       >
         <img
-          src={logo}
+          src={`${basePath}/images/logo_dark.png`}
           alt="Logo Growdience Creative"
           className="w-45 drop-shadow-[0_0_2px] drop-shadow-white rounded-full"
         />
@@ -59,7 +59,7 @@ const Footers = () => {
         className="flex flex-col gap-2 font-semibold [&>p]:flex [&>p]:items-center [&>p]:gap-x-2"
       >
         <p><LuMapPin size={20} /> <span>Cileungsi, Bogor, Jawa Barat</span></p>
-        <p><LuMail size={20} /> <span>support@growdience.help</span></p>
+        {/* <p><LuMail size={20} /> <span>support@growdience.help</span></p> */}
       </motion.div>
     </footer>
   )

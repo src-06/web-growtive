@@ -1,20 +1,7 @@
 import { Link } from "@inertiajs/react"
-import { LayoutPages, SectionGradBG } from "@/Components"
-
-import bgHero from "~/images/bg/endors.svg"
-import imgHero from "~/images/services/hero.png"
-import imgAbout1 from "~/images/services/about1.png"
-import imgAbout2 from "~/images/services/about2.png"
-import logoIG from "~/images/services/ig.svg"
-import logoTT from "~/images/services/tt.svg"
-import logoIG_TT from "~/images/services/ig-tt.svg"
-import bgTestimoni from "~/images/bg/testimoni.png"
-import profileTestimoni from "~/images/profile_testimoni.png"
-
-import { Card } from "./services/partials/card"
-import { CardPaket } from "./services/partials/card-paket"
-import { Card2 } from "./services/partials/card2"
 import { motion } from "framer-motion"
+import { Card, Card2, CardPaket, LayoutPages, SectionGradBG } from "@/Components"
+import { basePath } from "@/Config/env"
 
 const HalamanPengelolaanAkunMedsos = () => {
   return (
@@ -23,7 +10,7 @@ const HalamanPengelolaanAkunMedsos = () => {
         className="relative w-full h-dvh flex items-center overflow-hidden"
       >
         <img
-          src={bgHero}
+          src={`${basePath}/images/bg/endors.svg`}
           alt="Background Endorsement"
           className="-z-50 absolute -left-0.5 w-full scale-101"
         />
@@ -78,7 +65,7 @@ const HalamanPengelolaanAkunMedsos = () => {
               duration: 0.6,
               ease: 'backInOut',
             }}
-            src={imgHero}
+            src={`${basePath}/images/services/hero.png`}
             alt="endors"
             className="w-[40%]"
           />
@@ -87,7 +74,7 @@ const HalamanPengelolaanAkunMedsos = () => {
 
       <SectionGradBG>
         <div
-          className="pt-10 pb-5 grid grid-cols-2 grid-rows-2 text-background"
+          className="w-full h-full pt-10 pb-5 grid grid-cols-2 grid-rows-2 text-background"
         >
           <div
             className="w-full h-full flex justify-center items-center"
@@ -105,7 +92,7 @@ const HalamanPengelolaanAkunMedsos = () => {
                 duration: 0.6,
                 ease: 'backInOut',
               }}
-              src={imgAbout1}
+              src={`${basePath}/images/services/about1.png`}
               alt="Image About 1"
               className="w-70 rounded-[504px/442px]"
             />
@@ -167,7 +154,7 @@ const HalamanPengelolaanAkunMedsos = () => {
                 duration: 0.6,
                 ease: 'backInOut',
               }}
-              src={imgAbout2}
+              src={`${basePath}/images/services/about2.png`}
               alt="Image About 2"
               className="w-70 rounded-[517px/471px]"
             />
@@ -212,7 +199,7 @@ const HalamanPengelolaanAkunMedsos = () => {
             className="z-10 pb-2 px-3 flex flex-col justify-center items-center gap-5 bg-[#C4C4C4] border-3 border-white rounded-3xl"
           >
             <img
-              src={logoIG}
+              src={`${basePath}/images/services/ig.svg`}
               alt="services-ig"
               className="h-20 -mt-10"
             />
@@ -243,8 +230,8 @@ const HalamanPengelolaanAkunMedsos = () => {
             className="z-10 pb-2 px-3 flex flex-col justify-center items-center gap-5 bg-[#C4C4C4] border-3 border-white rounded-3xl"
           >
             <img
-              src={logoTT}
-              alt="services-ig"
+              src={`${basePath}/images/services/tt.svg`}
+              alt="services-tt"
               className="h-20 -mt-10 bg-white rounded-2xl"
             />
             <h1
@@ -273,8 +260,8 @@ const HalamanPengelolaanAkunMedsos = () => {
             className="z-10 pb-2 px-3 flex flex-col justify-center items-center gap-5 bg-[#C4C4C4] border-3 border-white rounded-3xl"
           >
             <img
-              src={logoIG_TT}
-              alt="services-ig"
+              src={`${basePath}/images/services/ig-tt.svg`}
+              alt="services-igtt"
               className="h-20 -mt-10"
             />
             <h1
@@ -312,7 +299,7 @@ const HalamanPengelolaanAkunMedsos = () => {
             className="text-4xl font-semibold uppercase"
           >Paket Kami</motion.h1>
           <Card
-            icon={logoIG}
+            icon="/images/services/ig.svg"
             id="instagram"
             nama="Instagram"
             detail="Harga Kelola Feed & Story Instagram"
@@ -413,7 +400,7 @@ const HalamanPengelolaanAkunMedsos = () => {
             </CardPaket>
           </Card>
           <Card
-            icon={logoTT}
+            icon="/images/services/tt.svg"
             id="tiktok"
             nama="Tiktok"
             detail="Harga Kelola Video Tiktok"
@@ -513,113 +500,6 @@ const HalamanPengelolaanAkunMedsos = () => {
               <li>Riset Hastag</li>
             </CardPaket>
           </Card2>
-        </div>
-
-        <div
-          className="pb-50 w-full"
-        >
-          <motion.h1
-            initial={{
-              opacity: 0,
-              y: -20,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-              ease: 'backInOut',
-            }}
-            className="mb-6 text-3xl font-bold"
-          >Cerita Klien</motion.h1>
-          <div
-            className="relative"
-          >
-            <motion.img
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                ease: 'backInOut',
-              }}
-              src={bgTestimoni}
-              alt="Background Testimoni"
-              className="w-full"
-            />
-            <div
-              className="absolute top-0 w-full h-full flex flex-wrap justify-center items-center gap-2"
-            >
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: -20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  delay: 0.4,
-                  duration: 0.6,
-                  ease: 'backInOut',
-                }}
-              >
-                <p
-                  className="m-6 p-8 bg-foreground rounded-4xl"
-                >Tim Growdience Creative sangat profesional. Mereka tidak hanya mengerjakan tugas, tapi juga memberikan solusi kreatif yang tidak saya pikirkan sebelumnya. Hasilnya melebihi ekspektasi. Sangat direkomendasikan untuk yang butuh Pengelolaan Akun Medsos.</p>
-                <div
-                  className="ml-8 flex items-center gap-4"
-                >
-                  <img
-                    src={profileTestimoni}
-                    alt="Profile Testimoni"
-                    className="size-17"
-                  />
-                  <h1
-                    className="text-xl text-foreground font-bold"
-                  >Fajar Dunia</h1>
-                </div>
-              </motion.div>
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: -20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  delay: 0.4,
-                  duration: 0.6,
-                  ease: 'backInOut',
-                }}
-              >
-                <p
-                  className="m-6 p-8 bg-foreground rounded-4xl"
-                >Tim Growdience Creative sangat profesional. Mereka tidak hanya mengerjakan tugas, tapi juga memberikan solusi kreatif yang tidak saya pikirkan sebelumnya. Hasilnya melebihi ekspektasi. Sangat direkomendasikan untuk yang butuh Pengelolaan Akun Medsos.</p>
-                <div
-                  className="ml-8 flex items-center gap-4"
-                >
-                  <img
-                    src={profileTestimoni}
-                    alt="Profile Testimoni"
-                    className="size-17"
-                  />
-                  <h1
-                    className="text-xl text-foreground font-bold"
-                  >Fajar Dunia</h1>
-                </div>
-              </motion.div>
-            </div>
-          </div>
         </div>
       </SectionGradBG>
     </LayoutPages>

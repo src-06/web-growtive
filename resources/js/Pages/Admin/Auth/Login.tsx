@@ -34,7 +34,6 @@ const AdminLogin = () => {
               placeholder="example@mail.com"
               value={data.email}
               onChange={e => setData('email', e.target.value)}
-              required
               className="px-2 py-1 outline-0 border-b-2 border-fg/80"
             />
             <p>{errors.email}</p>
@@ -47,7 +46,6 @@ const AdminLogin = () => {
               placeholder="Your password..."
               value={data.password}
               onChange={e => setData('password', e.target.value)}
-              required
               className="px-2 py-1 outline-0 border-b-2 border-fg/80"
             />
             <p>{errors.password}</p>
