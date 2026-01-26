@@ -241,7 +241,7 @@ const HalamanTentangKami = ({ about }: { about: About }) => {
                 <ul
                   className="ml-4 list-disc"
                 >
-                  {about.misi.split('\n\n').map((misi, index) => <li key={index}>{misi}</li>)}
+                  {about.misi.split('\n').map((misi, index) => <li key={index}>{misi}</li>)}
                 </ul>
               </motion.div>
             </div>
@@ -280,7 +280,7 @@ const HalamanTentangKami = ({ about }: { about: About }) => {
               <ul
                 className="ml-4 pt-2 list-disc flex flex-col gap-4"
               >
-                { goal.text.split('\n\n').map((text, index) =>
+                { goal.text.split('\n').map((text, index) =>
                   <li key={index}>{text}</li>
                 )}
               </ul>

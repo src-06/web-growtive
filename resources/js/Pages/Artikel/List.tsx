@@ -79,7 +79,7 @@ const ArtikelList = ({ articles }: { articles: PaginatedProps<Article> }) => {
                     </div>
                   </div>
                   <p className="text-pretty indent-8 tracking-wider">
-                    { article.body.slice(0, 300).split('\\n').map((paragraph, index) => index === 0 &&
+                    { article.body.slice(0, 300).split('\n').map((paragraph, index) => index === 0 &&
                       <span key={index}>{paragraph}</span>
                     )}{"... "}
                     <Link

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
@@ -11,6 +12,7 @@ class BerandaController extends Controller
   {
     return inertia('Beranda', [
       'testimonials' => Testimonial::latest('created_at')->paginate(4),
+      'articles' => Article::with('user')->latest('created_at')->paginate(3),
     ]);
   }
 }
