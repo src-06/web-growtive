@@ -14,11 +14,12 @@ return new class extends Migration
   {
     Schema::create('articles', function (Blueprint $table) {
       $table->id();
-      $table->uuid('id_article')->unique()->default(Str::uuid());
+      $table->uuid('id_article')->unique();
       $table->foreignId('id_user')->constrained(
         table: 'users',
         indexName: 'article_id_user',
       )->cascadeOnDelete();
+      $table->string('thumbnail');
       $table->string('title');
       $table->text('body');
       $table->timestamps();

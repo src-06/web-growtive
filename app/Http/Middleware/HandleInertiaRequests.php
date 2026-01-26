@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Contact;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -35,7 +37,8 @@ class HandleInertiaRequests extends Middleware
    */
   public function share(Request $request): array
   {
-    return array_merge(parent::share($request),
+    return array_merge(
+      parent::share($request),
       [
         'auth' => fn() => [
           'user' => $request->user() ? [
@@ -44,6 +47,34 @@ class HandleInertiaRequests extends Middleware
             'email' => $request->user()->email,
             'role' => $request->user()->role,
           ] : null,
+        ],
+        'menus' => fn() => Menu::with('submenus')->with('contact')->get()->map(fn($menu) => [
+          'id' => $menu->id,
+          'name' => $menu->name,
+          'url' => $menu->url,
+          'submenu' => $menu->submenus->map(fn($sub) => [
+            'name' => $sub->name,
+            'url' => $sub->url,
+          ]),
+          'contact' => $menu->contact ? [
+            'url_wa' => $menu->contact->url_wa,
+            'url_ig' => $menu->contact->url_ig,
+            'url_tt' => $menu->contact->url_tt,
+            'url_lk' => $menu->contact->url_lk,
+          ] : null,
+        ]),
+        'contact' => fn() => Contact::query()->first([
+          'id',
+          'url_wa',
+          'url_ig',
+          'url_tt',
+          'url_lk',
+        ]) ?? [
+          'id',
+          'url_wa' => null,
+          'url_ig' => null,
+          'url_tt' => null,
+          'url_lk' => null,
         ],
       ]
     );

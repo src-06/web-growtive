@@ -1,10 +1,12 @@
+import { basePath } from "@/Config/env"
 import { Link, usePage } from "@inertiajs/react"
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { FaChevronDown, FaInstagram, FaTiktok } from "react-icons/fa6"
-import logo from "~/images/logo.png"
+import { FaChevronRight, FaInstagram, FaTiktok } from "react-icons/fa6"
 
 const Headers = () => {
+  const { contact } = usePage().props
+
   return (
     <motion.header
       initial={{
@@ -26,7 +28,7 @@ const Headers = () => {
         className="flex items-center"
       >
         <img
-          src={logo}
+          src={`${basePath}/images/logo.png`}
           alt="Logo Growdience Creative"
           className="w-25 drop-shadow-[0_0_2px] drop-shadow-background rounded-full"
         />
@@ -37,121 +39,92 @@ const Headers = () => {
       >
         <Link
           as="button"
-          onClick={() => window.open('https://www.instagram.com/growdience.creative?igsh=MXhwMDdqeTNsd2tkeA%3D%3D&utm_source=qr', '_blank')}
+          onClick={() => window.open(contact.url_ig, '_blank')}
         ><FaInstagram size={30} /></Link>
         <Link
           as="button"
-          onClick={() => window.open('https://www.tiktok.com/@growdience.creati?_r=1&_t=ZS-93GHT8LJgnN', '_blank')}
+          onClick={() => window.open(contact.url_tt, '_blank')}
         ><FaTiktok size={30} /></Link>
       </div>
     </motion.header>
   )
 }
 
-interface NavMenusProps {
-  title: string
-  url?: string
-  submenu?: {
-    title: string
-    url: string
-  }[]
-}
-
-const NavMenus: NavMenusProps[] = [
-  {
-    title: "Beranda",
-    url: "/",
-  },
-  {
-    title: "TentangKami",
-    url: "/TentangKami",
-  },
-  {
-    title: "Layanan",
-    submenu: [
-      {
-        title: "Endorsement",
-        url: "/Endorsement",
-      },
-      {
-        title: "Pengelolaan Akun Medsos",
-        url: "/PengelolaanAkunMedsos",
-      },
-    ],
-  },
-  {
-    title: "Artikel",
-    url: "/Artikel",
-  },
-  {
-    title: "Kontak Kami",
-    url: "https://wa.wizard.id/ac9290",
-  },
-]
-
 const NavBtn = ({ orientation = 'vertical' }: { orientation?: 'vertical' | 'horizontal' }) => {
-  const [ dropdown, setDropdown ] = useState(false),
-    { url } = usePage(),
-    horiz = orientation === 'horizontal'
+  const [dropdown, setDropdown] = useState(false),
+    { url, props } = usePage(),
+    horiz = orientation === 'horizontal',
+    menus = props.menus
 
   return (
     <nav
-      className={`flex ${ horiz ? "flex-col gap-1 [&>button]:text-left" : "gap-4" }`}
+      className={`flex ${horiz ? "flex-col gap-1 [&>button]:text-left" : "gap-4"}`}
     >
-      { NavMenus.map(menu => {
-        if (menu.submenu) {
-          return (
-            <div
-              key={menu.title}
-              className="relative"
-            >
-              <button
-                onClick={() => setDropdown(!dropdown)}
-                className="w-full nav-btn"
+      {menus.map(menu => {
+        if (menu.id <= 5) {
+          if (menu.submenu?.length) {
+            return (
+              <div
+                key={menu.id}
+                className="relative"
               >
-                <span
-                  className={`flex ${ horiz && "justify-between" } items-center gap-2 ${ dropdown && "[&>svg]:-rotate-90" }`}
+                <button
+                  onClick={() => setDropdown(!dropdown)}
+                  className="w-full nav-btn"
                 >
-                  {menu.title}
-                  <FaChevronDown size={16} />
-                </span>
-              </button>
-              { dropdown &&
-                <div
-                  className={`absolute left-1/2 ${ horiz ? "top-1/2 -translate-y-1/2 translate-x-1/3" : "top-10 -translate-x-1/2" } flex flex-col bg-background/30 rounded-lg`}
-                >
-                  { menu.submenu.map(sub =>
-                    <Link
-                      key={sub.title}
-                      as="button"
-                      href={sub.url}
-                      className={`px-3 py-1 text-left text-nowrap ${ url === sub.url && "font-bold" } hover:bg-background/20 ${ sub.title === "Endorsement" ? "rounded-t-lg" : "rounded-b-lg" }`}
-                    >{sub.title}</Link>
-                  )}
-                </div>
-              }
-            </div>
-          )
-        }
+                  <span
+                    className={`flex ${horiz && "justify-between"} items-center gap-2`}
+                  >
+                    {menu.name}
+                    <FaChevronRight size={16} className={`${dropdown && !horiz && "rotate-90"} ${!dropdown && horiz && "rotate-90" || dropdown && horiz && "rotate-0"} transition-transform duration-300`} />
+                  </span>
+                </button>
+                {dropdown &&
+                  <div
+                    className={`absolute left-1/2 ${horiz ? "top-1/2 -translate-y-1/2 translate-x-1/3" : "top-10 -translate-x-1/2"} flex flex-col bg-background/30 rounded-lg`}
+                  >
+                    {menu.submenu.map(sub =>
+                      <Link
+                        key={sub.name}
+                        as="button"
+                        href={basePath + sub.url}
+                        className={`px-3 py-1 text-left text-nowrap ${url === sub.url && "font-bold"} hover:bg-background/20 ${sub.name === "Endorsement" ? "rounded-t-lg" : "rounded-b-lg"}`}
+                      >{sub.name}</Link>
+                    )}
+                  </div>
+                }
+              </div>
+            )
+          }
 
-        if (menu.title === "Kontak Kami") {
+          if (menu.contact) {
+            return (
+              <Link
+                key={menu.id}
+                as="button"
+                onClick={() => window.open(menu.contact?.url_wa, '_blank')}
+                className="nav-btn"
+              >{menu.name}</Link>
+            )
+          }
+
           return (
             <Link
-              key={menu.title}
+              key={menu.id}
               as="button"
-              onClick={() => window.open(menu.url, '_blank')}
-              className="nav-btn"
-            >{menu.title}</Link>
+              href={basePath + menu.url}
+              className={`nav-btn ${url === (basePath + menu.url) && "font-bold"}`}
+            >{menu.name}</Link>
           )
         }
 
         return (
           <Link
-            key={menu.title}
+            key={menu.id}
             as="button"
-            href={menu.url}
-            className={`nav-btn ${ url === menu.url && "font-bold" }`}
-          >{menu.title}</Link>
+            onClick={() => window.open(menu.url, '_blank')}
+            className={`nav-btn`}
+          >{menu.name}</Link>
         )
       })}
     </nav>

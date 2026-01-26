@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
-import logoIG from "~/images/services/ig.svg"
-import logoTT from "~/images/services/tt.svg"
+import { basePath } from "@/Config/env";
+import { motion } from "framer-motion"
 
 export function Card2({ id, children, count }: { id: string; children: React.ReactNode; count: number }) {
   return (
@@ -31,7 +30,7 @@ export function Card2({ id, children, count }: { id: string; children: React.Rea
             className="w-full flex items-center gap-2"
           >
             <img
-              src={logoTT}
+              src={`${basePath}/images/services/ig.svg`}
               alt="tt"
               className="w-15"
             />
@@ -42,7 +41,7 @@ export function Card2({ id, children, count }: { id: string; children: React.Rea
             className="w-full flex items-center gap-2"
           >
             <img
-              src={logoIG}
+              src={`${basePath}/images/services/tt.svg`}
               alt="ig"
               className="w-15"
             />

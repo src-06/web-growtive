@@ -1,20 +1,17 @@
 import { motion } from "framer-motion"
-import { Link } from "@inertiajs/react"
+import { Link, usePage } from "@inertiajs/react"
 import { ApplicationProcess, LayoutPages, SectionGradBG } from "@/Components"
-import bgHero from "~/images/bg/endors.svg"
-import imgHero from "~/images/endors/hero.png"
-import imgAbout1 from "~/images/endors/about1.png"
-import imgAbout2 from "~/images/endors/about2.png"
-import imgContactUs from "~/images/endors/contact-us.svg"
+import { basePath } from "@/Config/env"
 
 const HalamanEndorsement = () => {
+  const { contact } = usePage().props
   return (
     <LayoutPages>
       <section
         className="relative w-full h-dvh flex items-center overflow-hidden"
       >
         <img
-          src={bgHero}
+          src={`${basePath}/images/bg/endors.svg`}
           alt="Background Endorsement"
           className="-z-50 absolute -left-0.5 w-full scale-101"
         />
@@ -70,7 +67,7 @@ const HalamanEndorsement = () => {
               duration: 0.6,
               ease: 'backInOut',
             }}
-            src={imgHero}
+            src={`${basePath}/images/endors/hero.png`}
             alt="endors"
             className="w-[40%]"
           />
@@ -99,7 +96,7 @@ const HalamanEndorsement = () => {
                 duration: 0.6,
                 ease: 'backInOut',
               }}
-              src={imgAbout1}
+              src={`${basePath}/images/endors/about1.png`}
               alt="endors1"
               className="z-0 relative top-10 left-10 w-55"
             />
@@ -117,7 +114,7 @@ const HalamanEndorsement = () => {
                 duration: 0.6,
                 ease: 'backInOut',
               }}
-              src={imgAbout2}
+              src={`${basePath}/images/endors/about2.png`}
               alt="endors2"
               className="z-1 relative top-0 left-30 w-55"
             />
@@ -206,11 +203,11 @@ const HalamanEndorsement = () => {
         >
           <Link
             as="button"
-            onClick={() => window.open('https://wa.wizard.id/ac9290', '_blank')}
+            onClick={() => window.open(contact.url_wa, '_blank')}
             className="w-[80%]"
           >
             <img
-              src={imgContactUs}
+              src={`${basePath}/images/endors/contact-us.svg`}
               alt="Contact Us"
               className="w-full"
             />

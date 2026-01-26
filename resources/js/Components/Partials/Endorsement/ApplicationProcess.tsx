@@ -1,10 +1,7 @@
+import { basePath } from "@/Config/env"
 import { motion } from "framer-motion"
 import { useEffect } from "react"
 import { LuChevronDown } from "react-icons/lu"
-import imgKonsultasi from "~/images/endors/konsultasi.png"
-import imgNegosiasi from "~/images/endors/negosiasi.png"
-import imgPengerjaan from "~/images/endors/pengerjaan.png"
-import imgPublish from "~/images/endors/publish.png"
 
 interface ProcessProps {
   title: string
@@ -15,22 +12,22 @@ interface ProcessProps {
 const process: ProcessProps[] = [
   {
     title: "Konsultasi",
-    img: imgKonsultasi,
+    img: "/images/endors/konsultasi.png",
     detail: "Konsultasi adalah proseskomunikasi atau pertemuan antara dua pihak atau lebih untuk mendiskusikan, berbagi informasi, dan mencapai keputusan atau solusi terkait suatu masalah atau topik tertentu. Dalam konteks lain, konsultasi juga dapat diartikan sebagai pertukaran pikiran untuk mendapatkan kesimpulan, seperti nasihat atau saran.",
   },
   {
     title: "Negosiasi Kebutuhan",
-    img: imgNegosiasi,
+    img: "/images/endors/negosiasi.png",
     detail: "Negosiasi adalah proses komunikasi dan interaksi antara dua pihak atau lebih yang memiliki kepentingan berbeda untuk mencapai kesepakatan bersama. Dalam proses negosiasi, setiap pihak menyampaikan kebutuhan, keinginan, dan batasannya masing-masing dengan tujuan memperoleh hasil yang saling menguntungkan.",
   },
   {
     title: "Pengerjaan & Revisi",
-    img: imgPengerjaan,
+    img: "/images/endors/pengerjaan.png",
     detail: "Pengerjaan dilakukan sesuai kesepakatan yang telah ditentukan. Revisi diberikan berdasarkan masukan pihak terkait sesuai dengan ketentuan yang disepakati.",
   },
   {
     title: "Publish",
-    img: imgPublish,
+    img: "/images/endors/publish.png",
     detail: "Tahap publish dilakukan setelah seluruh proses pengerjaan dan revisi selesai serta telah mendapatkan persetujuan dari pihak terkait. Pada tahap ini, hasil pekerjaan dipublikasikan sesuai dengan platform atau media yang telah disepakati.",
   },
 ]
@@ -88,7 +85,7 @@ export function ApplicationProcess() {
           className="relative h-fit p-6 flex flex-col justify-between items-center gap-4 bg-[#D9D9D9] rounded-3xl shadow-xl shadow-background/30"
         >
           <h1 className="absolute -top-8 left-1/2 -translate-x-1/2 w-16 h-16 flex justify-center items-center text-4xl text-foreground font-bold bg-linear-to-b from-background to-[#9e9e9e] rounded-full p-4">{index+1}</h1>
-          <img src={data.img} alt={data.title} />
+          <img src={basePath+data.img} alt={data.title} />
           <h2
             className="h-20 text-3xl text-center font-semibold"
           >{data.title}</h2>

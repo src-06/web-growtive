@@ -1,9 +1,9 @@
-import { LayoutPages, SectionGradBG } from "@/Components"
+import { Background, LayoutPages, SectionGradBG } from "@/Components"
 import { FaChevronRight, FaInstagram, FaTiktok } from "react-icons/fa6"
 import { Link } from "@inertiajs/react"
-import bgHome from "~/images/bg/home.svg"
-import imgServices from "~/images/endors/service.png"
 import { motion } from "framer-motion"
+import { basePath } from "@/Config/env"
+import { PaginatedProps, Testimonial } from "@/Types"
 
 interface StepsProps {
   title: string
@@ -29,14 +29,14 @@ const Steps: StepsProps[] = [
   },
 ]
 
-const HalamanBeranda = () => {
+const HalamanBeranda = ({ testimonials }: { testimonials: PaginatedProps<Testimonial> }) => {
   return (
     <LayoutPages>
       <section
         className="relative w-full h-dvh flex justify-center items-center"
       >
         <img
-          src={bgHome}
+          src={`${basePath}/images/bg/home.svg`}
           alt="Background Home"
           className="-z-1 absolute top-0 w-full -mt-0.5"
         />
@@ -97,7 +97,7 @@ const HalamanBeranda = () => {
           >
             <Link
               as="button"
-              href="/TentangKami"
+              href={`${basePath}/TentangKami`}
               className="w-fit flex items-center gap-2 hover:[&>span]:text-foreground hover:[&>span]:bg-transparent hover:[&>svg]:translate-x-4"
             >
               <span
@@ -147,14 +147,14 @@ const HalamanBeranda = () => {
             >
               <Link
                 as="button"
-                href="/Endorsement"
+                href={`${basePath}/Endorsement`}
                 className="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-background rounded-3xl"
               >
                 <h1
                   className="mt-4 text-2xl font-bold"
                 >Endorsement</h1>
                 <img
-                  src={imgServices}
+                  src={`${basePath}/images/endors/service.png`}
                   alt="Endorsements Image"
                   className="w-40"
                 />
@@ -176,7 +176,7 @@ const HalamanBeranda = () => {
             >
               <Link
                 as="button"
-                href="/PengelolaanAkunMedsos"
+                href={`${basePath}/PengelolaanAkunMedsos`}
                 className="w-60 h-90 flex flex-col items-center bg-linear-to-br from-stone-400 to-background rounded-3xl"
               >
                 <h1
@@ -199,7 +199,7 @@ const HalamanBeranda = () => {
         className="h-fit"
       >
         <div
-          className="w-full h-fit pt-20 pb-30 flex flex-col jus items-center"
+          className="w-full h-fit pt-20 pb-20 flex flex-col items-center"
         >
           <motion.h1
             initial={{
@@ -248,6 +248,98 @@ const HalamanBeranda = () => {
           </div>
         </div>
       </SectionGradBG>
+
+      { testimonials.data.length > 0 &&
+        <SectionGradBG
+          className="h-fit"
+        >
+          <div
+            className="w-full h-fit pt-20 pb-30 flex flex-col justify-center items-center"
+          >
+            <motion.h1
+              initial={{
+                opacity: 0,
+                y: -20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.6,
+                ease: 'backInOut',
+              }}
+              className="text-3xl text-background uppercase"
+            >Cerita <span className="font-bold">Klien</span></motion.h1>
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: -20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.6,
+                ease: 'backInOut',
+              }}
+              className="w-full"
+            >
+              <Background
+                className="w-full h-fit mt-10 p-4 flex flex-col gap-y-2"
+              >
+                { testimonials.data.map(testimonial =>
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      y: -20,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      delay: 0.3,
+                      duration: 0.6,
+                      ease: 'backInOut',
+                    }}
+                    key={testimonial.id}
+                    className="w-full h-full flex gap-x-2 text-background bg-foreground rounded-2xl"
+                  >
+                    <img
+                      src={basePath+"/"+testimonial.profile}
+                      alt={`Profile ${testimonial.name}`}
+                      className="w-[10%] h-fit m-4 shadow-md shadow-background rounded-full"
+                    />
+                    <div
+                      className="w-[90%] h-full my-2 mr-2 flex flex-col gap-y-2"
+                    >
+                      <div
+                        className="w-full h-[20%]"
+                      >
+                        <h1
+                          className="text-2xl font-bold"
+                        >{testimonial.name}</h1>
+                        <h2
+                          className="text-sm"
+                        >Dari perusahaan <span className="text-background/70 font-bold">{testimonial.company}</span></h2>
+                      </div>
+                      <div
+                        className="w-full h-[80%]"
+                      >
+                        <p
+                          className="p-4 bg-white border shadow rounded-2xl"
+                        >{testimonial.testimonial}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </Background>
+            </motion.div>
+          </div>
+        </SectionGradBG>
+      }
     </LayoutPages>
   )
 }

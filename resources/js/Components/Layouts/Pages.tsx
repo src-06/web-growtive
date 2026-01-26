@@ -1,11 +1,11 @@
 import { Footers, Headers } from "@/Components"
-import { Link } from "@inertiajs/react"
+import { basePath } from "@/Config/env"
+import { Link, usePage } from "@inertiajs/react"
 import { useEffect } from "react"
 import { LuArrowUpFromDot } from "react-icons/lu"
-import iconWA from "~/images/wa.svg"
 
 const LayoutPages = ({ children }: { children?: React.ReactNode }) => {
-   useEffect(() => {
+  useEffect(() => {
     const toTop = document.getElementById("to-top")
     const contactWa = document.getElementById("contact-wa")
 
@@ -27,6 +27,8 @@ const LayoutPages = ({ children }: { children?: React.ReactNode }) => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const { contact } = usePage().props
+
   return (
     <div className="relative">
       <Headers />
@@ -43,12 +45,12 @@ const LayoutPages = ({ children }: { children?: React.ReactNode }) => {
       <Link
         as="button"
         id="contact-wa"
-        onClick={() => window.open('https://wa.wizard.id/ac9290', '_blank')}
+        onClick={() => window.open(contact.url_wa, '_blank')}
         target="_blank"
         className="z-50 opacity-0 fixed bottom-28 right-6 size-14"
       >
         <img
-          src={iconWA}
+          src={`${basePath}/images/wa.svg`}
           alt="Icon Whatsapp"
           className="w-full hover:opacity-50 transition-opacity duration-500"
         />

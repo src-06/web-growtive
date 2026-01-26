@@ -1,3 +1,4 @@
+import { basePath } from "@/Config/env";
 import { motion } from "framer-motion";
 
 export function Card({ id, icon, nama, detail, children, count }: { id: string; icon: string; nama: string; detail: string; children: React.ReactNode; count: number }) {
@@ -29,7 +30,7 @@ export function Card({ id, icon, nama, detail, children, count }: { id: string; 
             className="flex items-center gap-2"
           >
             <img
-              src={icon}
+              src={basePath + icon}
               alt={`${icon}`}
               className="w-15"
             />

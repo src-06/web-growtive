@@ -72,7 +72,7 @@ const AdminUsers = ({ users }: { users: PaginatedProps<User> }) => {
                 key={user.id}
                 onClick={() => destroy(user.id, user.name)}
                 disabled={canEdit(user)}
-                className="w-full h-6 my-1 px-2 text-background font-bold bg-red-500 hover:bg-red-300 disabled:bg-red-900 rounded-md transition-colors duration-500"
+                className="w-full h-6 my-1 px-2 text-background font-bold bg-red-500 hover:bg-red-300 disabled:bg-red-900 disabled:cursor-not-allowed rounded-md transition-colors duration-500"
               >Hapus</button>
             )}
           </div>

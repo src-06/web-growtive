@@ -21,13 +21,14 @@ class ArticleFactory extends Factory
     return [
       'id_article' => Str::uuid(),
       'id_user' => User::factory(),
+      'thumbnail' => '/article/thumnail_.png',
       'title' => fake()->sentence(4),
-      'body' => fake()->paragraph(rand(6, 20)) . "\\n" .
-                fake()->paragraph(rand(6, 20)) . "\\n" .
-                fake()->paragraph(rand(6, 20)) . "\\n" .
-                fake()->paragraph(rand(6, 20)) . "\\n" .
-                fake()->paragraph(rand(6, 20)) . "\\n" .
-                fake()->paragraph(rand(6, 20)) . "\\n" .
+      'body' => fake()->paragraph(rand(6, 20)) . "\n\n" .
+                fake()->paragraph(rand(6, 20)) . "\n\n" .
+                fake()->paragraph(rand(6, 20)) . "\n\n" .
+                fake()->paragraph(rand(6, 20)) . "\n\n" .
+                fake()->paragraph(rand(6, 20)) . "\n\n" .
+                fake()->paragraph(rand(6, 20)) . "\n\n" .
                 fake()->paragraph(rand(6, 20)),
       'created_at' => fake()->dateTimeBetween('-3 year', '-1 year'),
       'updated_at' => fake()->dateTimeBetween('-2 year', 'now'),

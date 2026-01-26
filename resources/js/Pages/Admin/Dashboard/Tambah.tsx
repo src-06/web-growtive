@@ -4,7 +4,7 @@ import { router, useForm } from "@inertiajs/react"
 import { route } from "ziggy-js"
 
 const AdminDashboardTambah = ({ charts }: { charts: PaginatedProps<Charts> }) => {
-  const { setData, post } = useForm({
+  const { setData, post, processing } = useForm({
     instagram: 0,
     tiktok: 0,
     instagram_tiktok: 0,
@@ -13,13 +13,16 @@ const AdminDashboardTambah = ({ charts }: { charts: PaginatedProps<Charts> }) =>
 
   const destroy = (id: number) => {
     if (confirm(`Mau hapus?`))
-      router.delete(route('charts.destroy', id))
+    router.delete(route('charts.destroy', id), {
+      onSuccess: () => alert("Berhasil menghapus."),
+      onError: () => alert("Gagal menghapus!"),
+    })
   }
 
-  const submit = () => {
-    post(route('charts.store'))
-    confirm('Data berhasil ditambahkan.')
-  }
+  const submit = () => post(route('charts.store'), {
+    onSuccess: () => alert("Berhasil menambahkan."),
+    onError: () => alert("Gagal menambahkan!"),
+  })
 
   return (
     <LayoutAdmin
@@ -29,7 +32,6 @@ const AdminDashboardTambah = ({ charts }: { charts: PaginatedProps<Charts> }) =>
         className="p-6"
       >
         <div
-          // onSubmit={submit}
           className="flex justify-between"
         >
           <div
@@ -123,6 +125,7 @@ const AdminDashboardTambah = ({ charts }: { charts: PaginatedProps<Charts> }) =>
               type="submit"
               onClick={submit}
               value="Tambahkan"
+              disabled={processing}
               className="w-full h-6 my-1 px-2 text-background font-bold bg-green-500 hover:bg-green-300 rounded-md transition-colors duration-500"
             />
             { charts.data.map(chart =>
